@@ -1,4 +1,4 @@
-# OpenCoze，中文名称开源扣子
+# OpenCoze，中文名称开源扣子。一个开源的企业 ERP + MES 系统。
 
 #### 介绍
 OpenCoze，中文名称开源扣子。
