@@ -8,7 +8,9 @@ OpenCoze，中文名称开源扣子。
 项目开源方式：
 
 tone_master  外部开源模块
+
 tone_good    内部开源模块
+
 tone_better  更好的待开源模块
 
 项目构成：供应链（采购、销售、库存），WMS模块、MES模块、供应商平台、财务模块
