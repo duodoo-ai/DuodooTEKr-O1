@@ -3,7 +3,6 @@
 #### 介绍
 OpenCoze，中文名称开源扣子。一个开源的企业 ERP + MES 系统。
 
-
 借助开源手段，通过一站式数字化套件系统，助力企业实现内外部管理各环节、各用户之间的紧密协作。
 
 项目开源方式：
@@ -61,3 +60,7 @@ OpenCoze，中文名称开源扣子。一个开源的企业 ERP + MES 系统。
 4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
 5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+
+#### 微信群运营：【OpenCoze开源俱乐部】
+
