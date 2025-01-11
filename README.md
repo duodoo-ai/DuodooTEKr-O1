@@ -63,4 +63,4 @@ OpenCoze，中文名称开源扣子。一个开源的企业 ERP + MES 系统。
 
 
 #### 微信群运营：【OpenCoze开源俱乐部】
-
+![contect.jpg](contect.jpg)
