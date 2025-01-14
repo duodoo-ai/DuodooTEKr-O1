@@ -52,8 +52,8 @@ class QstamperApproval(models.Model):
     source_binary_data = fields.Binary(
         "源附件文件", help="k3-源附件文件", default=False, attachment=True, copy=False
     )
-    dest_attach_data = fields.Binary("受控件附件", readonly=False, copy=False)
     source_binary_data_name = fields.Char("源附件文件名", copy=False)
+    dest_attach_data = fields.Binary("受控件附件", readonly=False, copy=False)
     dest_binary_data_name = fields.Char("受控件附件文件名", copy=False)
     company_id = fields.Many2one(
         'res.company',
