@@ -18,7 +18,7 @@
     'category': '中国化应用/声光报警集成方案',
     'version': '1.0',
 
-    'depends': ['base', 'mail', 'tone_core', 'maintenance'],
+    'depends': ['base', 'mail', 'maintenance','base_core'],
 
     'data': [
         'security/groups.xml',
@@ -32,7 +32,7 @@
         'views/audible_trend_view.xml',
         'views/audible_alarm_backup_view.xml',
         'views/maintenance.xml',
-        'views/menu_views.xml',
+        'views/audible_menu_views.xml',
     ],
     'demo': [
 

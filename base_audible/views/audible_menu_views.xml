@@ -3,9 +3,9 @@
     <menuitem
             id="menu_phoenix_root"
             name="声光报警"
-            web_icon="audible_management,static/description/icon.png"
+            web_icon="base_audible,static/description/icon.png"
             groups="tone_phoenix_api_user,tone_phoenix_api_manager"
-            sequence="160"/>
+            sequence="10005"/>
     <menuitem
             id="phoenix_optic_alarm_meu"
             name="告警数据"
