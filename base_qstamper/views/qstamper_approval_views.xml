@@ -53,12 +53,10 @@
                             <field name="SyncState"/>
                             <field name="SyncCode"/>
                             <field name="ControlState"/>
-                            <field name="attachment_id"/>
                             <field name="FileSize"/>
+                            <field name="attachment_id"/>
                         </group>
                         <group>
-                            <field name="attachment_id"/>
-                            <field name="FileSize"/>
                             <field name="source_binary_data"/>
                             <field name="source_binary_data_name"/>
                             <field name="dest_attach_data"/>
