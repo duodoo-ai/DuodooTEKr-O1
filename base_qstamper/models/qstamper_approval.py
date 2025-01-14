@@ -46,14 +46,15 @@ class QstamperApproval(models.Model):
     SyncCode = fields.Char(string='授权码', help='云玺印管平台返回申请授权码')
     DocumentStatus = fields.Char(string='数据状态', help='上位系统写入，不可为空')
     CancelStatus = fields.Char(string='禁用状态', help='上位系统写入，不可为空')
-    # 生产单附件
+    # 附件
     attachment_id = fields.Char(string='附件ID', help='记录云星空附件唯一ID')
     FileSize = fields.Char(string='文件大小', help='文件大小')
     source_binary_data = fields.Binary(
-        "生产单附件 (源文件)", help="k3-生产单附件", default=False, attachment=True, copy=False
+        "源附件文件", help="k3-源附件文件", default=False, attachment=True, copy=False
     )
-    dest_attach_data = fields.Binary("生产单附件 (受控件)", readonly=False, copy=False)
-    source_binary_data_name = fields.Char("生产单附件文件名", copy=False)
+    dest_attach_data = fields.Binary("受控件附件", readonly=False, copy=False)
+    source_binary_data_name = fields.Char("源附件文件名", copy=False)
+    dest_binary_data_name = fields.Char("受控件附件文件名", copy=False)
     company_id = fields.Many2one(
         'res.company',
         string='公司',

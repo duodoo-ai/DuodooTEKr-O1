@@ -18,8 +18,9 @@
                 <field name="attachment_id" optional="show"/>
                 <field name="FileSize" optional="show"/>
                 <field name="source_binary_data" optional="show"/>
-                <field name="dest_attach_data" optional="show"/>
                 <field name="source_binary_data_name" optional="show"/>
+                <field name="dest_attach_data" optional="show"/>
+                <field name="dest_binary_data_name" optional="show"/>
                 <field name="company_id" optional="hide"/>
                 <field name="id" optional="hide"/>
             </list>
@@ -32,27 +33,36 @@
         <field name="arch" type="xml">
             <form string="云玺印管平台">
                 <sheet>
-                    <group>
+                    <group string="基础信息">
                         <group>
                             <field name="name"/>
                             <field name="BillType"/>
                             <field name="applicant"/>
                             <field name="category"/>
-                            <field name="date"/>
-                            <field name="SyncState"/>
-                            <field name="SyncCode"/>
-                            <field name="DocumentStatus"/>
-                            <field name="CancelStatus"/>
                         </group>
                         <group>
+                            <field name="date"/>
+                            <field name="DocumentStatus"/>
+                            <field name="CancelStatus"/>
+                            <field name="company_id"/>
+                            <field name="id"/>
+                        </group>
+                    </group>
+                    <group string="附件信息">
+                        <group>
+                            <field name="SyncState"/>
+                            <field name="SyncCode"/>
                             <field name="ControlState"/>
                             <field name="attachment_id"/>
                             <field name="FileSize"/>
+                        </group>
+                        <group>
+                            <field name="attachment_id"/>
+                            <field name="FileSize"/>
                             <field name="source_binary_data"/>
-                            <field name="dest_attach_data"/>
                             <field name="source_binary_data_name"/>
-                            <field name="company_id"/>
-                            <field name="id"/>
+                            <field name="dest_attach_data"/>
+                            <field name="dest_binary_data_name"/>
                         </group>
                     </group>
                 </sheet>
