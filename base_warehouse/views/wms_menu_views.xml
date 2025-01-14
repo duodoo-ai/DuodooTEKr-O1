@@ -4,8 +4,8 @@
         <menuitem id='root_wms_menu'
                 name='智能仓储'
                 groups="tone_wms_gen_song_user,tone_wms_gen_song_manager"
-                web_icon="warehouse_interface,static/description/icon.png"
-                sequence="10"/>
+                web_icon="base_warehouse,static/description/icon.png"
+                sequence="10000"/>
 
         <!-- 二级菜单 -->
         <menuitem

@@ -4,12 +4,12 @@
 		<!-- 以下为功能模块相关，给每个主菜单设置一个组便于理解 -->
 		<record model="res.groups" id="tone_wms_gen_song_user">
 			<field name="name">智能仓储用户</field>
-			<field name="category_id" ref="tone_core.tone_good"/>
+			<field name="category_id" ref="base_core.base_core"/>
 			<field name="comment">智能仓储用户组</field>
 		</record>
 		<record model="res.groups" id="tone_wms_gen_song_manager">
 			<field name="name">智能仓储管理</field>
-			<field name="category_id" ref="tone_core.tone_good"/>
+			<field name="category_id" ref="base_core.base_core"/>
 			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
 			<field name="comment">智能仓储权限组</field>
 		</record>

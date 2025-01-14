@@ -18,7 +18,7 @@
     'category': '中国化应用/智能仓储集成方案',
     'version': '1.0',
 
-    'depends': ['base','mail','tone_core'],
+    'depends': ['base','mail','base_core'],
 
     'data': [
         'data/business_data.xml',
