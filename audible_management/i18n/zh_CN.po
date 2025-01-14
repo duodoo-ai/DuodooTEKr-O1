@@ -1,0 +1,471 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* audible_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-03 07:40+0000\n"
+"PO-Revision-Date: 2025-01-03 07:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: audible_management
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm__async_state
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm_backup__async_state
+msgid "0：从上位系统写入获得告警状态；1：告警动作已触发"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.actions.act_window,name:audible_management.action_phoenix_audible_protocol
+#: model:ir.model,name:audible_management.model_phoenix_audible_protocol
+msgid "485通讯协议指令集"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.actions.act_window,help:audible_management.hr_equipment_request_corrective_action
+#: model_terms:ir.actions.act_window,help:audible_management.hr_equipment_request_preventive_action
+msgid "Add a new maintenance request"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_autovacuum__create_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__create_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__create_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__create_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__create_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__create_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_autovacuum__create_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__create_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__create_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__create_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__create_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__create_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_autovacuum__display_name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__display_name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__display_name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__display_name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__display_name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__display_name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.actions.act_window,help:audible_management.hr_equipment_request_corrective_action
+#: model_terms:ir.actions.act_window,help:audible_management.hr_equipment_request_preventive_action
+msgid ""
+"Follow the process of the request and communicate with the collaborator."
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_autovacuum__id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__id
+msgid "ID"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_autovacuum__write_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__write_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__write_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__write_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__write_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__write_uid
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_autovacuum__write_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__write_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__write_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__write_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__write_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__write_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model,name:audible_management.model_maintenance_equipment
+msgid "Maintenance Equipment"
+msgstr "设备保养"
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+msgid "上月数据"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+msgid "今日数据"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm__async_time
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm__monitor_code
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm__monitor_value
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm__name
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm_backup__async_time
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm_backup__monitor_code
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm_backup__monitor_value
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm_backup__name
+msgid "从上位系统写入"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm__monitor_time
+#: model:ir.model.fields,help:audible_management.field_phoenix_optic_alarm_backup__monitor_time
+msgid "从上位系统写入。监测时间"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__digit
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__process
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__speed
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__total
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__unit
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__digit
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__process
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__speed
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__total
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__unit
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__digit
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__process
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__speed
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__total
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__unit
+msgid "从服务器上获得实时测值"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__monitor_date
+msgid "从服务器上获得实时测值。监测时间"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__collection_date
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__collection_date
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__monitor_date
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__collection_date
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__monitor_date
+msgid "从服务器上获得实时测值。监测时间。"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,help:audible_management.field_phoenix_diagnoses_measurements__name
+#: model:ir.model.fields,help:audible_management.field_phoenix_dynamic_measurements__name
+#: model:ir.model.fields,help:audible_management.field_phoenix_trend_measurements__name
+msgid "从服务器上获得监测点"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__company_id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__company_id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__company_id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__company_id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__company_id
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__company_id
+msgid "公司"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+msgid "分组"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model,name:audible_management.model_phoenix_audible_autovacuum
+msgid "删除告警旧日志"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.actions.act_window,name:audible_management.action_phoenix_dynamic_measurements
+#: model:ir.model,name:audible_management.model_phoenix_dynamic_measurements
+#: model:ir.ui.menu,name:audible_management.phoenix_dynamic_measurements_meu
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_tree
+msgid "动态数据"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__unit
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__unit
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__unit
+msgid "单位"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__active
+msgid "启用"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__monitor_value
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__monitor_value
+msgid "告警值"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.actions.act_window,name:audible_management.action_phoenix_optic_alarm
+#: model:ir.model,name:audible_management.model_phoenix_optic_alarm
+#: model:ir.ui.menu,name:audible_management.phoenix_optic_alarm_meu
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_tree
+msgid "告警数据"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__async_time
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__async_time
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+msgid "告警时间"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__async_state
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__async_state
+msgid "告警状态"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.actions.act_window,name:audible_management.action_phoenix_optic_alarm_backup
+#: model:ir.model,name:audible_management.model_phoenix_optic_alarm_backup
+#: model:ir.ui.menu,name:audible_management.phoenix_optic_alarm_backup_meu
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_calendar
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_kanban
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_tree
+msgid "告警趋势分析"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.ui.menu,name:audible_management.menu_phoenix_root
+msgid "声光报警"
+msgstr ""
+
+#. module: audible_management
+#: model:res.groups,comment:audible_management.tone_phoenix_api_manager
+msgid "声光报警器权限组"
+msgstr ""
+
+#. module: audible_management
+#: model:res.groups,name:audible_management.tone_phoenix_api_user
+msgid "声光报警器用户"
+msgstr ""
+
+#. module: audible_management
+#: model:res.groups,comment:audible_management.tone_phoenix_api_user
+msgid "声光报警器用户组"
+msgstr ""
+
+#. module: audible_management
+#: model:res.groups,name:audible_management.tone_phoenix_api_manager
+msgid "声光报警器管理"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_calendar
+msgid "处理人"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_calendar
+msgid "处理日期"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__total
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__total
+msgid "实测值"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__monitor_code
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__monitor_code
+msgid "序列号"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__total
+msgid "总值"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__code
+msgid "指令代码"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__action
+msgid "指令动作"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_audible_protocol__name
+msgid "指令地址码"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__digit
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__digit
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__digit
+msgid "数字"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.actions.act_window,help:audible_management.action_phoenix_audible_protocol
+msgid "新485通讯协议指令集"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__monitor_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__monitor_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__monitor_time
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__monitor_time
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__monitor_date
+msgid "日期/时间"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+msgid "本年数据"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+msgid "本月数据"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm__name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_optic_alarm_backup__name
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__name
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+msgid "测点"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_tree
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_tree
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_tree
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_tree
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_tree
+msgid "监测时间"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.actions.act_window,name:audible_management.hr_equipment_request_corrective_action
+#: model:ir.ui.menu,name:audible_management.menu_m_request_corrective_form
+msgid "纠正性维护"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_maintenance_equipment__asset_serial
+msgid "设备唯一ID"
+msgstr ""
+
+#. module: audible_management
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_optic_alarm_backup_kanban
+msgid "设备测点-"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.actions.act_window,name:audible_management.action_phoenix_diagnoses_measurements
+#: model:ir.model,name:audible_management.model_phoenix_diagnoses_measurements
+#: model:ir.ui.menu,name:audible_management.phoenix_diagnoses_measurements_meu
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_tree
+msgid "诊断数据"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.actions.act_window,name:audible_management.action_phoenix_trend_measurements
+#: model:ir.model,name:audible_management.model_phoenix_trend_measurements
+#: model:ir.ui.menu,name:audible_management.phoenix_trend_measurements_meu
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_tree
+msgid "趋势数据"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__process
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__process
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__process
+msgid "进程"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.ui.menu,name:audible_management.phoenix_audible_protocol_meu
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_audible_protocol_tree
+msgid "通讯协议指令集"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__speed
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__speed
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__speed
+msgid "速度"
+msgstr ""
+
+#. module: audible_management
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_diagnoses_measurements__collection_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_dynamic_measurements__collection_date
+#: model:ir.model.fields,field_description:audible_management.field_phoenix_trend_measurements__collection_date
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_diagnoses_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_dynamic_measurements_search
+#: model_terms:ir.ui.view,arch_db:audible_management.phoenix_trend_measurements_search
+msgid "采集时间"
+msgstr ""

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id='phoenix_01' model="phoenix.audible.protocol">
+            <field name="code">1001</field>
+            <field name="action">单独打开声音</field>
+            <field name="name">01 06 04 0E 00 01 28 F9</field>
+        </record>
+        <record id='phoenix_02' model="phoenix.audible.protocol">
+            <field name="code">1002</field>
+            <field name="action">单独打开灯光</field>
+            <field name="name">01 06 04 0E 00 02 68 F8</field>
+        </record>
+        <record id='phoenix_03' model="phoenix.audible.protocol">
+            <field name="code">1003</field>
+            <field name="action">打开声音和灯光</field>
+            <field name="name">01 06 04 0E 00 03 A9 38</field>
+        </record>
+        <record id='phoenix_04' model="phoenix.audible.protocol">
+            <field name="code">1004</field>
+            <field name="action">关闭声光</field>
+            <field name="name">01 06 04 0E 00 00 E9 39</field>
+        </record>
+        <record id='phoenix_05' model="phoenix.audible.protocol">
+            <field name="code">1005</field>
+            <field name="action">音量调为1级</field>
+            <field name="name">01 06 04 0F 00 01 79 39</field>
+        </record>
+        <record id='phoenix_06' model="phoenix.audible.protocol">
+            <field name="code">1006</field>
+            <field name="action">音量调为30级</field>
+            <field name="name">01 06 04 0F 00 1E 38 F1</field>
+        </record>
+        <record id='phoenix_07' model="phoenix.audible.protocol">
+            <field name="code">1007</field>
+            <field name="action">音调切换到第一个文件夹第一条语音</field>
+            <field name="name">01 06 04 10 01 01 49 6F</field>
+        </record>
+        <record id='phoenix_08' model="phoenix.audible.protocol">
+            <field name="code">1008</field>
+            <field name="action">音调切换到第一个文件夹第二条语音</field>
+            <field name="name">01 06 04 10 01 02 09 6E</field>
+        </record>
+        <record id='phoenix_09' model="phoenix.audible.protocol">
+            <field name="code">1009</field>
+            <field name="action">单曲循环模式</field>
+            <field name="name">01 06 04 11 00 01 19 3F</field>
+        </record>
+        <record id='phoenix_10' model="phoenix.audible.protocol">
+            <field name="code">1010</field>
+            <field name="action">单曲模式</field>
+            <field name="name">01 06 04 11 00 02 59 3E</field>
+        </record>
+        <record id='phoenix_11' model="phoenix.audible.protocol">
+            <field name="code">1011</field>
+            <field name="action">更改报警器通讯地址为02（每次只能连接一台报警器操作）</field>
+            <field name="name">01 06 04 56 00 02 E9 2B</field>
+        </record>
+        <record id='phoenix_12' model="phoenix.audible.protocol">
+            <field name="code">1012</field>
+            <field name="action">更改设备地址为01</field>
+            <field name="name">00 06 04 56 00 01 A8 FB</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 流量阀值 : views -->
+    <record id="phoenix_audible_protocol_tree" model="ir.ui.view">
+        <field name="name">485通讯协议指令集</field>
+        <field name="model">phoenix.audible.protocol</field>
+        <field name="arch" type="xml">
+            <list string="通讯协议指令集" editable="top">
+                <field name="code" optional="show"/>
+                <field name="action" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="active" optional="hide"/>
+            </list>
+        </field>
+    </record>
+    <record id="phoenix_audible_protocol_kanban" model="ir.ui.view">
+        <field name="name">485通讯协议指令集</field>
+        <field name="model">phoenix.audible.protocol</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong><field name="action"/></strong>
+                                <field name="name"/>
+                                <field name="code"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- 流量阀值 : actions -->
+    <record id="action_phoenix_audible_protocol" model="ir.actions.act_window">
+        <field name="name">485通讯协议指令集</field>
+        <field name="res_model">phoenix.audible.protocol</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            新485通讯协议指令集
+          </p>
+        </field>
+    </record>
+</odoo>

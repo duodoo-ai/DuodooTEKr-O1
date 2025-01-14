@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 以下为功能模块相关，给每个主菜单设置一个组便于理解 -->
+    <record model="res.groups" id="tone_phoenix_api_user">
+        <field name="name">声光报警器用户</field>
+        <field name="category_id" ref="tone_core.tone_good"/>
+        <field name="comment">声光报警器用户组</field>
+    </record>
+    <record model="res.groups" id="tone_phoenix_api_manager">
+        <field name="name">声光报警器管理</field>
+        <field name="category_id" ref="tone_core.tone_good"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">声光报警器权限组</field>
+    </record>
+</odoo>
