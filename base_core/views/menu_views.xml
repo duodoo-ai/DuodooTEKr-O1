@@ -3,8 +3,8 @@
 	<data noupdate="0">
         <menuitem id='root_menu'
                 name='基础档案'
-                web_icon="tone_core,static/description/icon.png"
-                sequence="1000"/>
+                web_icon="base_core,static/description/icon.png"
+                sequence="20000"/>
 
         <menuitem
                 name="基本配置"
