@@ -33,7 +33,7 @@ class QstamperCategory(models.Model):
 
 class QstamperApproval(models.Model):
     _name = 'qstamper.approval'
-    _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = '云玺印管平台'
 
     name = fields.Char(string='订单号', help='采购订单号或销售订单号，唯一性')

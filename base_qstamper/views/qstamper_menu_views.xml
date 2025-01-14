@@ -4,8 +4,8 @@
         <menuitem id='root_qstamper_menu'
                 name='云玺印管'
                 groups="tone_qstamper_approval_user,tone_qstamper_approval_manager"
-                web_icon="qstamper_base,static/description/icon.png"
-                sequence="15"/>
+                web_icon="base_qstamper,static/description/icon.png"
+                sequence="10010"/>
 
         <!-- 二级菜单 -->
         <menuitem
