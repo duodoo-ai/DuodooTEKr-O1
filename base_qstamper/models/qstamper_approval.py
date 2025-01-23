@@ -47,7 +47,7 @@ class QstamperApproval(models.Model):
     DocumentStatus = fields.Char(string='数据状态', help='上位系统写入，不可为空')
     CancelStatus = fields.Char(string='禁用状态', help='上位系统写入，不可为空')
     # 附件
-    attachment_id = fields.Char(string='附件ID', help='记录云星空附件唯一ID')
+    attachment_id = fields.Char(string='附件ID(InterId)', help='记录云星空单据唯一FID（InterId）')
     FileSize = fields.Char(string='文件大小', help='文件大小')
     source_binary_data = fields.Binary(
         "源附件文件", help="k3-源附件文件", default=False, attachment=True, copy=False
