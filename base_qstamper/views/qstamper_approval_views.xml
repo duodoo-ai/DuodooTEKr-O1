@@ -8,11 +8,10 @@
                 <field name="name" optional="show"/>
                 <field name="BillType" readonly="1" optional="show"/>
                 <field name="applicant" optional="show"/>
-                <field name="category" optional="show"/>
                 <field name="date" optional="show"/>
                 <field name="ControlState" optional="show"/>
                 <field name="attachment_id" optional="hide"/>
-                <field name="FileSize" optional="show"/>
+                <field name="FileSize" optional="hide"/>
                 <field name="source_binary_data" optional="show"/>
                 <field name="source_binary_data_name" optional="show"/>
                 <field name="dest_attach_data" optional="show"/>
@@ -36,7 +35,6 @@
                             <field name="name" readonly="1"/>
                             <field name="BillType" readonly="1"/>
                             <field name="applicant" readonly="1"/>
-                            <field name="category" readonly="1"/>
                         </group>
                         <group>
                             <field name="date" readonly="1"/>

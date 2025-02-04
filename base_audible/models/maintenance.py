@@ -16,3 +16,7 @@ class MaintenanceEquipment(models.Model):
     _inherit = 'maintenance.equipment'
 
     asset_serial = fields.Char(string='设备唯一ID', copy=False)
+    complete_path = fields.Char(string='完整名称', copy=False)
+    status = fields.Char(string='设备状态', copy=False)
+    parent_id = fields.Many2one('maintenance.equipment', string='设备目录')
+    child_ids = fields.One2many('maintenance.equipment', 'parent_id', string='下级目录')
