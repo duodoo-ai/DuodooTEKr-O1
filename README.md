@@ -60,4 +60,5 @@ CodeLychee，中文名称码上荔枝。一个开源的企业 ERP + MES 系统�
 6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
 
 #### 联系作者： 微信号odoo025   手机18951631470  邮件zou.jason@qq.com
-#### 微信群运营：【OpenCoze开源俱乐部】
+#### 微信群运营：【XX开源俱乐部】
+![zan.jpg](zan.jpg)
