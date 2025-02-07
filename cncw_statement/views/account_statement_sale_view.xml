@@ -42,6 +42,7 @@
                             <group>
                                 <field name="name" class="oe_inline" readonly="1" string="对帐单号"/>
                                 <field name="date" readonly="state != 'draft'" string="对帐日期" class="oe_inline"/>
+
                                 <field name="partner_id" class="oe_inline" string="客户编号"
                                        domain="[('customer_rank','>',0)]"
                                        readonly="state != 'draft' or line_count > 0"

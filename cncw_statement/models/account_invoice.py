@@ -899,7 +899,7 @@ class AccountInvoiceLine(models.Model):
                               help="开票单据号.")
     move_name = fields.Char(string='单据名称', related='move_id.name', store=True, index=True)
     date = fields.Date(related='move_id.date', string='单据日期', store=True, readonly=True, index=True, copy=False,
-                       group_operator='min')
+                       aggregator='min')
     ref = fields.Char(related='move_id.ref', string='单据参考', store=True, copy=False, index=True, readonly=False)
     parent_state = fields.Selection(related='move_id.state', string='单据状态', store=True, readonly=True)
     company_id = fields.Many2one(related='move_id.company_id', store=True, readonly=True, string='公司',

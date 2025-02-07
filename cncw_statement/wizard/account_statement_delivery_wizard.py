@@ -1,9 +1,11 @@
 # -*- encoding: utf-8 -*-
+import logging
 from odoo import models, fields, api
 from odoo.addons import base_cw
 from odoo.exceptions import UserError
 from odoo.tools import float_round
 from odoo.tools.translate import _
+_logger = logging.getLogger(__name__)
 
 
 class AccountStatementDeliveryWizard(models.TransientModel):
@@ -11,7 +13,7 @@ class AccountStatementDeliveryWizard(models.TransientModel):
 
     master_id = fields.Many2one('account.statement', '对帐单', )
     statement_type = fields.Selection(base_cw.public.STATEMENT_TYPE, string='对帐类型', readonly=True,
-                                      related='master_id.statement_type')  # STATEMENT_TYPE = [('S', '销售'), ('P', '采购')]
+                                      related='master_id.statement_type')
     partner_id = fields.Many2one('res.partner', string='合作伙伴', related='master_id.partner_id', readonly=True)
     picking_type_id = fields.Many2many('stock.picking.type', string='出入库类型',
                                        domain=[('table_name', 'in', ('stock_delivery',
@@ -53,44 +55,33 @@ class AccountStatementDeliveryWizard(models.TransientModel):
 
     def action_query(self):
         self.ensure_one()
-        # picking_type_ids = tuple()
         if self.picking_type_id:
             picking_type_ids = tuple(self.picking_type_id.ids)
-        #     picking_type_ids = tuple(self.env['stock.picking.type'].search([('table_name', 'in', ('stock_delivery',
-        #                                                           'sale_return_storage',
-        #                                                           'sale_rebate',
-        #                                                           'sale_fandian',
-        #                                                           'customer_support_policy'))]).ids)
-        # else:
-        #     picking_type_ids = tuple(self.picking_type_id.ids)
         else:
             raise UserError(_(u"提示!请选择 出入库类型！"))
             # 判断搜索到的库位有几个，若为1则不用tuple
         if len(picking_type_ids) == 1:
             picking_type_ids = "(%s)" % picking_type_ids[0]
-
         sql = """
                select a.id as move_id,to_char(a.date,'yyyy-mm-dd') as date,
                       a.sale_line_id,a.product_id,
-                      --g.customer_product_code,
                       b.name,a.origin,a.picking_type_id,
-                      a.product_uom,k.currency_id,d.exchange_rate, --('sale_rebate','customer_support_policy')
+                      a.product_uom,k.currency_id,d.exchange_rate,
                       a.net_weight,CASE WHEN (l.table_name in ('sale_rebate') or a.sale_line_id is null)
                                         then a.price_unit  else c.real_price end as price_unit,
                       a.product_qty,a.to_check_qty,a.unchecked_qty,a.unchecked_amount
-                 from stock_move a left join stock_picking b on a.picking_id=b.id
-                                   left join sale_order_line c on a.sale_line_id=c.id
-                                   left join sale_order d on c.order_id=d.id
-                                   left join product_product e on a.product_id=e.id
-                                   left join product_template f on e.product_tmpl_id=f.id
-                                   --left join sale_customer_product_pool g on c.product_pool_id=g.id
-                                   left join product_pricelist k on d.pricelist_id=k.id
-                                   left join stock_picking_type l on l.id=a.picking_type_id
+                 from stock_move a 
+                    left join stock_picking b on a.picking_id=b.id
+                    left join sale_order_line c on a.sale_line_id=c.id
+                    left join sale_order d on c.order_id=d.id
+                    left join product_product e on a.product_id=e.id
+                    left join product_template f on e.product_tmpl_id=f.id
+                    left join product_pricelist k on d.pricelist_id=k.id
+                    left join stock_picking_type l on l.id=a.picking_type_id
                 where b.state='done' and a.product_qty>0
                   and COALESCE(a.is_gift,'f')='f'
                   and to_char(b.date_done,'yyyy-mm-dd')>='%s'
                   and to_char(b.date_done,'yyyy-mm-dd')<='%s'
-                  --#jon(when send address is a contract)  and b.partner_id =   
                   and b.partner_id in (select id from res_partner where id = %s or parent_id = %s)
         """ % (self.start_date, self.end_date, self.partner_id.id, self.partner_id.id,)
         if self.picking_type_id:
@@ -111,6 +102,7 @@ class AccountStatementDeliveryWizard(models.TransientModel):
         items = []
         self._cr.execute(sql)
         result = self._cr.dictfetchall()
+        _logger.info(f"返回对账单：{result}")
         for line in result:
             for k, v in line.items():
                 if not v:
@@ -233,7 +225,6 @@ class AccountStatementDeliveryWizard(models.TransientModel):
         return {
             'name': _('销售货款对帐 向导'),
             'type': 'ir.actions.act_window',
-            'view_type': 'form',
             'view_mode': 'form',
             'res_model': 'account.statement.delivery.wizard',
             'views': [(view.id, 'form')],
