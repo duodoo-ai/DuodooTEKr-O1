@@ -55,6 +55,7 @@ class account_fiscalyear(models.Model):
 
 
     def update_period(self):
+        self.ensure_one()
         obj = self.env["account.period"]
         periods = obj.search(
             ['&', ('special', '=', False), '|', ('pre_period_id', '=', False), ('next_period_id', '=', False)])
@@ -62,6 +63,7 @@ class account_fiscalyear(models.Model):
             self.data_prepared(periods)
 
     def create_period(self):
+        self.ensure_one()
         if not self.period_ids:
             self.create_periods()
         self.data_prepared(self.period_ids)
@@ -69,6 +71,7 @@ class account_fiscalyear(models.Model):
         return
 
     def create_periods(self):
+        self.ensure_one()
         if self.period_ids:
             raise UserError(_('会计期间已经建立,不能重复建立!'))
         period_obj = self.env['account.period']
@@ -236,7 +239,7 @@ class account_period(models.Model):
                 raise UserError(_('会计年度已关闭,不能返回开启状态!'))
             period.state = 'open'
             period.onchange_state()
-            self.invalidate_cache()
+            # self.invalidate_cache()
         return True
 
     def action_close(self):
