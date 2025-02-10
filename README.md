@@ -1,6 +1,6 @@
 ### 第一部分：项目说明
     
-1.  DuodooBMS (Duodoo Business Management System)，中文名称多度经营管理系统。一个开源的企业 ERP + MES 系统。 
+1.  DuodooBMS (Duodoo Business Management System)，中文名称多度经营管理系统。 
 
 2.  面向年营业额在3千万到3亿元的增长型企业
 
