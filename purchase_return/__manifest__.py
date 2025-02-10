@@ -8,7 +8,8 @@
     """,
     'category': '中国进销存/采购退货',
     'depends': ['hr','stock','purchase','purchase_stock'],#继承
-    "author": "YIDE，zou.jason@qq.com",
+    "author": "zou.jason@qq.com",
+    "website": "www.duodoo.tech",
     'sequence': 2,
     'data': [
         'data/purchase_return_data.xml',

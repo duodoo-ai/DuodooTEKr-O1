@@ -20,8 +20,8 @@
     """,
 
     "category": "中国化财务/应收应付",
-    "author": "sunshine，zou.jason@qq.com",
-    "website": "",
+    "author": "zou.jason@qq.com",
+    "website": "www.duodoo.tech",
     "depends": ["base","stock", "base_cw",
                 "purchase", "sale", 'product','crm',
                 ],

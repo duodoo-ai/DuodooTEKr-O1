@@ -7,7 +7,8 @@
     """,
     'depends': ['sale','sale_management','sale_stock','sale_delivery','sale_function'],
     'category': '中国进销存/销售变更',
-    "author": "sunshine，zou.jason@qq.com",
+    "author": "zou.jason@qq.com",
+    "website": "www.duodoo.tech",
     'sequence': 2,
     'data': [
         'data/sale_change_data.xml',

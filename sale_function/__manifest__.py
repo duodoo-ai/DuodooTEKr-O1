@@ -8,7 +8,8 @@
     """,
     'depends': ['sale','sale_management'],#继承
     'category': '中国进销存/销售扩展',
-    "author": "sunshine，zou.jason@qq.com",
+    "author": "zou.jason@qq.com",
+    "website": "www.duodoo.tech",
     'sequence': 2,
     'data': [
         'security/ir.model.access.csv',

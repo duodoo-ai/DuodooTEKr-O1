@@ -11,8 +11,8 @@
     2.修改源生模组基础信息，增加权限控制;\
     """,
     "category": "中国化财务/财务基础",
-    "author": "sunshine，zou.jason@qq.com",
-    "website": "",
+    "author": "zou.jason@qq.com",
+    "website": "www.duodoo.tech",
     "depends": ["base", 'web', 'mail',"product", "sale","purchase","account","stock","hr"],
     "data": [
         'security/res_security.xml',

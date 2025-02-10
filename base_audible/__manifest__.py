@@ -13,7 +13,7 @@
                     """,
 
     'author': "Jason Zou",
-    'website': "",
+    "website": "www.duodoo.tech",
 
     'category': '中国化应用/声光报警集成方案',
     'version': '1.0',

@@ -8,7 +8,8 @@
     """,
     'depends': ['hr','sale','sale_stock','sale_management','sale_function'],#继承
     'category': '中国进销存/销售退货',
-    "author": "sunshine，zou.jason@qq.com",
+    "author": "zou.jason@qq.com",
+    "website": "www.duodoo.tech",
     'sequence': 2,
     'data': [
         'data/sale_return_data.xml',

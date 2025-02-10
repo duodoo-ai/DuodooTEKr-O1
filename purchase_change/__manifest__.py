@@ -7,7 +7,8 @@
     """,
     'depends': ['hr','purchase','purchase_requisition','purchase_stock'],#继承
     'category': '中国进销存/采购变更',
-    "author": "sunshine，zou.jason@qq.com",
+    "author": "zou.jason@qq.com",
+    "website": "www.duodoo.tech",
     'sequence': 2,
     'data': [
         'data/purchase_change_data.xml',

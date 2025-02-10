@@ -1,7 +1,7 @@
 {
     'name': "应用核心模块",
     'author': "Jason Zou",
-    'website': "",
+    "website": "www.duodoo.tech",
     'summary': '隐藏Odoo内置技术复杂性，增加基本权限组',
     'category': '中国化应用/应用核心模块',
     "description":
