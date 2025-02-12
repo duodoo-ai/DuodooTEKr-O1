@@ -55,4 +55,6 @@
         name="设备互联"
         web_icon="maintenance,static/description/icon.png"
         sequence="161"/>
+
+
 </odoo>
