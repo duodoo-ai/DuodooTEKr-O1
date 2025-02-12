@@ -2,14 +2,36 @@
 <odoo>
     <!-- 以下为功能模块相关，给每个主菜单设置一个组便于理解 -->
     <record model="res.groups" id="tone_phoenix_api_user">
-        <field name="name">声光报警器用户</field>
+        <field name="name">告警数据权限</field>
         <field name="category_id" ref="base_core.base_core"/>
-        <field name="comment">声光报警器用户组</field>
+        <field name="comment">告警数据权限</field>
     </record>
-    <record model="res.groups" id="tone_phoenix_api_manager">
-        <field name="name">声光报警器管理</field>
+
+    <record model="res.groups" id="tone_phoenix_api_diagnoses">
+        <field name="name">诊断数据权限</field>
         <field name="category_id" ref="base_core.base_core"/>
         <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
-        <field name="comment">声光报警器权限组</field>
+        <field name="comment">诊断数据权限</field>
+    </record>
+
+    <record model="res.groups" id="tone_phoenix_api_dynamic">
+        <field name="name">动态数据权限</field>
+        <field name="category_id" ref="base_core.base_core"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">动态数据权限</field>
+    </record>
+
+    <record model="res.groups" id="tone_phoenix_api_trend">
+        <field name="name">趋势数据权限</field>
+        <field name="category_id" ref="base_core.base_core"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">趋势数据权限</field>
+    </record>
+
+    <record model="res.groups" id="tone_phoenix_api_manager">
+        <field name="name">声光主数据管理</field>
+        <field name="category_id" ref="base_core.base_core"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">主数据管理(声光)</field>
     </record>
 </odoo>

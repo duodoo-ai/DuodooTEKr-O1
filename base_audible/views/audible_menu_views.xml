@@ -11,36 +11,42 @@
             name="告警数据"
             action='action_phoenix_optic_alarm'
             parent="menu_phoenix_root"
+            groups="tone_phoenix_api_user,tone_phoenix_api_manager"
             sequence="0"/>
     <menuitem
             id="phoenix_diagnoses_measurements_meu"
             name="诊断数据"
             action='action_phoenix_diagnoses_measurements'
             parent="menu_phoenix_root"
+            groups="tone_phoenix_api_diagnoses,tone_phoenix_api_manager"
             sequence="1"/>
         <menuitem
             id="phoenix_dynamic_measurements_meu"
             name="动态数据"
             action='action_phoenix_dynamic_measurements'
             parent="menu_phoenix_root"
+            groups="tone_phoenix_api_dynamic,tone_phoenix_api_manager"
             sequence="5"/>
         <menuitem
             id="phoenix_trend_measurements_meu"
             name="趋势数据"
             action='action_phoenix_trend_measurements'
             parent="menu_phoenix_root"
+            groups="tone_phoenix_api_trend,tone_phoenix_api_manager"
             sequence="10"/>
     <menuitem
             id="phoenix_audible_protocol_meu"
             name="通讯协议指令集"
             action='action_phoenix_audible_protocol'
             parent="menu_phoenix_root"
+            groups="tone_phoenix_api_manager"
             sequence="100"/>
     <menuitem
             id="phoenix_optic_alarm_backup_meu"
             name="告警趋势分析"
             action='action_phoenix_optic_alarm_backup'
             parent="menu_phoenix_root"
+            groups="tone_phoenix_api_manager"
             sequence="1000"/>
 
     <!--重命名原“维护”菜单为新“设备互联”菜单-->
