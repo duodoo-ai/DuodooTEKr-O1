@@ -40,7 +40,11 @@ git remote set-url github git@github.com:jasonzou2018/DuodooBMS.git
 
 这里的 git@github.com:jasonzou2018/DuodooBMS.git 是你 GitHub 仓库的 SSH 地址，可在 GitHub 仓库页面中找到。
 
-6. 再次推送代码
+6. 查看远程分支设置
+   
+   git remote -v   
+
+7. 再次推送代码
 
     git push origin <分支名>
 

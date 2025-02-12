@@ -5,10 +5,13 @@
     'version': '1.0',
     'summary' : """
         销售退货单
+    更多支持：
+    18951631470
+    zou.jason@qq.com
     """,
     'depends': ['hr','sale','sale_stock','sale_management','sale_function'],#继承
     'category': '中国进销存/销售退货',
-    "author": "zou.jason@qq.com",
+    'author': "Jason Zou",
     "website": "www.duodoo.tech",
     'sequence': 2,
     'data': [

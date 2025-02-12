@@ -22,5 +22,10 @@
               action='core_clean_business_data_action'
               parent='root_menu'
               sequence='50'/>
+        <menuitem
+                name="接口配置"
+                id="sub_interface_menu"
+                sequence="100"
+                parent="root_menu"/>
     </data>
 </odoo>

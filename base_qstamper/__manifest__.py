@@ -30,6 +30,7 @@
         'security/groups.xml',
         'security/ir.model.access.csv',
         'views/qstamper_category_views.xml',
+        'views/qstamper_equipment_views.xml',
         'views/qstamper_approval_views.xml',
         'views/qstamper_approval_md_views.xml',
         'views/qstamper_menu_views.xml',

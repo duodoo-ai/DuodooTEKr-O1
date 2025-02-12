@@ -30,6 +30,23 @@ class QstamperCategory(models.Model):
     ]
 
 
+class QstamperEquipment(models.Model):
+    _name = 'qstamper.equipment'
+    _description = '印章设备列表'
+
+    name = fields.Char(string='名称', help='印章名称，唯一性')
+    uuid = fields.Char(string='印章标识', help='印章标识，唯一性')
+    company_id = fields.Many2one(
+        'res.company',
+        string='公司',
+        change_default=True,
+        default=lambda self: self.env.company)
+
+    _sql_constraints = [
+        ('uuid_uniq', 'unique(uuid)', '印章唯一标识')
+    ]
+
+
 
 class QstamperApproval(models.Model):
     _name = 'qstamper.approval'

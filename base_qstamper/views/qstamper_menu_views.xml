@@ -26,5 +26,11 @@
                 action='action_qstamper_category'
                 parent='root_qstamper_menu'
                 sequence='10'/>
+        <menuitem
+                id='action_qstamper_equipment_men'
+                name='印章设备'
+                action='action_qstamper_equipment'
+                parent='root_qstamper_menu'
+                sequence='15'/>
     </data>
 </odoo>
