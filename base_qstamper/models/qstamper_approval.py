@@ -33,7 +33,7 @@ class QstamperCategory(models.Model):
 class QstamperEquipment(models.Model):
     _name = 'qstamper.equipment'
     _description = '印章设备列表'
-
+    # YXYG04_01
     name = fields.Char(string='名称', help='印章名称，唯一性')
     uuid = fields.Char(string='唯一标识符', help='唯一标识符，全局唯一性')
     tenant = fields.Char(string='租户标识', help='租户标识，全局唯一性')
@@ -49,6 +49,25 @@ class QstamperEquipment(models.Model):
 
     _sql_constraints = [
         ('uuid_uniq', 'unique(uuid)', '印章唯一标识')
+    ]
+
+
+class QstamperFileType(models.Model):
+    _name = 'qstamper.file.type'
+    _description = '申请文件类型'
+    # YXYG03_05
+    name = fields.Char(string='名称', help='印章名称，唯一性')
+    fileid = fields.Char(string='文件类型ID', help='唯一标识符，全局唯一性')
+    tenant = fields.Char(string='租户标识', help='租户标识，全局唯一性')
+    online = fields.Boolean(string='启用', default=True, help='在线状态')
+    company_id = fields.Many2one(
+        'res.company',
+        string='公司',
+        change_default=True,
+        default=lambda self: self.env.company)
+
+    _sql_constraints = [
+        ('fileid_uniq', 'unique(fileid)', '文件类型唯一标识')
     ]
 
 

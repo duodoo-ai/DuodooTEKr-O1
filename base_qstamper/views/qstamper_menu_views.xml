@@ -20,17 +20,25 @@
                 action='action_qstamper_approval'
                 parent='root_qstamper_menu'
                 sequence='5'/>
+
+        <!-- 将主数据菜单附加到基础档案-主数据模块 -->
         <menuitem
                 id='action_qstamper_category_men'
                 name='印章类型'
                 action='action_qstamper_category'
-                parent='root_qstamper_menu'
+                parent='base_core.sub_mdata_menu'
                 sequence='10'/>
-        <menuitem
+            <menuitem
                 id='action_qstamper_equipment_men'
                 name='印章设备'
                 action='action_qstamper_equipment'
-                parent='root_qstamper_menu'
+                parent='base_core.sub_mdata_menu'
                 sequence='15'/>
+        <menuitem
+                id='action_qstamper_filetype_men'
+                name='申请文件类型'
+                action='action_qstamper_filetype'
+                parent='base_core.sub_mdata_menu'
+                sequence='20'/>
     </data>
 </odoo>
