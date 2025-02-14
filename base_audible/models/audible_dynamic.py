@@ -17,7 +17,9 @@ class PhoenixDynamicMeasurements(models.Model):
     _description = '动态数据'
     _order = 'id desc'
 
-    name = fields.Char(string='测点', required=True, index=True, help='从服务器上获得监测点')
+    MachineID = fields.Char(string='设备ID', index=True, help='监测设备ID')
+    PointID = fields.Char(string='测点ID',index=True, help='监测测点ID')
+    name = fields.Char(string='测点', index=True, help='从服务器上获得监测点')
     monitor_date = fields.Datetime(string='日期/时间', help='从服务器上获得实时测值。监测时间。')
     speed = fields.Float(string='速度', digits='Speed', help='从服务器上获得实时测值')
     process = fields.Float(string='进程', digits='Process', help='从服务器上获得实时测值')

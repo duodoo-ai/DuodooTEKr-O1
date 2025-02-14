@@ -5,6 +5,8 @@
         <field name="model">phoenix.dynamic.measurements</field>
         <field name="arch" type="xml">
             <list string="动态数据" delete="0" create="0" edit="0" default_order="id desc">
+                <field name="MachineID" optional="hide"/>
+                <field name="PointID" optional="hide"/>
                 <field name="name" optional="show"/>
                 <field name="monitor_date" string="监测时间" optional="show"/>
                 <field name='speed' optional="show"/>

@@ -35,7 +35,12 @@ class QstamperEquipment(models.Model):
     _description = '印章设备列表'
 
     name = fields.Char(string='名称', help='印章名称，唯一性')
-    uuid = fields.Char(string='印章标识', help='印章标识，唯一性')
+    uuid = fields.Char(string='唯一标识符', help='唯一标识符，全局唯一性')
+    tenant = fields.Char(string='租户标识', help='租户标识，全局唯一性')
+    deptName = fields.Char(string='部门名称', help='部门名称')
+    location = fields.Char(string='位置', help='位置')
+    type = fields.Char(string='类型', help='类型')
+    online = fields.Boolean(string='启用', default=True, help='在线状态')
     company_id = fields.Many2one(
         'res.company',
         string='公司',

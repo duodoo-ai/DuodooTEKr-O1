@@ -4,19 +4,19 @@
         <!-- 系统里都是按 name 字符串搜索的，所以千万不要修改name -->
         <record id='decimal_speed' model="decimal.precision">
             <field name="name">Speed</field>
-            <field name="digits" eval="0"/>
+            <field name="digits" eval="12"/>
         </record>
         <record id='decimal_process' model="decimal.precision">
             <field name="name">Process</field>
-            <field name="digits" eval="0"/>
+            <field name="digits" eval="12"/>
         </record>
         <record id='decimal_digit' model="decimal.precision">
             <field name="name">Digit</field>
-            <field name="digits" eval="0"/>
+            <field name="digits" eval="12"/>
         </record>
         <record id='decimal_total' model="decimal.precision">
             <field name="name">Total</field>
-            <field name="digits" eval="3"/>
+            <field name="digits" eval="12"/>
         </record>
     </data>
 </odoo>
