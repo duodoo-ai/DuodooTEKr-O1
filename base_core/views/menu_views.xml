@@ -23,6 +23,11 @@
               parent='root_menu'
               sequence='50'/>
         <menuitem
+                name="主数据"
+                id="sub_mdata_menu"
+                sequence="80"
+                parent="root_menu"/>
+        <menuitem
                 name="接口配置"
                 id="sub_interface_menu"
                 sequence="100"
