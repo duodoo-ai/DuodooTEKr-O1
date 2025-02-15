@@ -1,3 +1,19 @@
+### 写在前面：用户指引
+
+    [Gitee入口] https://gitee.com/duodoo-ai/duodoo-user-manual
+    
+    [Github入口] https://github.com/duodoo-ai/duodoo-user-manual
+    
+    说明：
+
+    ../duodoo-user-manual/official   官方资源[技术文档、白皮书、客户案例]
+    
+    ../duodoo-user-manual/docs    技术资料[侧重用户手册、技术资料（如API文档、开发指南）与案例结合]
+    
+    ../duodoo-user-manual/solutions   行业方案[将技术文档按行业分类，搭配对应案例]
+    
+    ../duodoo-user-manual/cases   客户案例[展示客户成果，辅以技术方案说明]
+
 ### 第一部分：项目说明
     
 1.  DuodooBMS (Duodoo Business Management System)，中文名称多度经营管理系统。 
