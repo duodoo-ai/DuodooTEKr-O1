@@ -1,8 +1,8 @@
 ### 写在前面：用户指引
 
-    [Gitee入口] https://gitee.com/duodoo-ai/duodoo-user-manual
+    [[Gitee入口](https://gitee.com/duodoo-ai/duodoo-user-manual)] 
     
-    [Github入口] https://github.com/duodoo-ai/duodoo-user-manual
+    [[Github入口](https://github.com/duodoo-ai/duodoo-user-manual)] 
     
     说明：
 
