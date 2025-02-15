@@ -54,7 +54,7 @@ class QstamperEquipment(models.Model):
 
 class QstamperFileType(models.Model):
     _name = 'qstamper.file.type'
-    _description = '申请文件类型'
+    _description = '申请类型'
     # YXYG03_05
     name = fields.Char(string='名称', help='印章名称，唯一性')
     fileid = fields.Char(string='文件类型ID', help='唯一标识符，全局唯一性')

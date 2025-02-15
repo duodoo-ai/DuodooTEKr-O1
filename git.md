@@ -36,9 +36,9 @@ cat ~/.ssh/id_ed25519.pub
 5. 修改远程仓库地址为 SSH 地址
 在终端中进入项目目录，使用以下命令将远程仓库地址从 HTTPS 改为 SSH：
     
-git remote set-url github git@github.com:jasonzou2018/DuodooBMS.git
+git remote set-url github git@github.com:duodoo-ai/DuodooBMS.git
 
-这里的 git@github.com:jasonzou2018/DuodooBMS.git 是你 GitHub 仓库的 SSH 地址，可在 GitHub 仓库页面中找到。
+这里的 git@github.com:duodoo-ai/DuodooBMS.git 是你 GitHub 仓库的 SSH 地址，可在 GitHub 仓库页面中找到。
 
 6. 查看远程分支设置
    
