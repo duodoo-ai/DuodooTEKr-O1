@@ -3,7 +3,7 @@
 	<data noupdate="0">
         <menuitem id='root_menu'
                 name='基础档案'
-                web_icon="base_core,static/description/icon.png"
+                web_icon="odoo_base,static/description/icon.png"
                 sequence="20000"/>
 
         <menuitem

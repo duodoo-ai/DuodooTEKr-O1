@@ -5,8 +5,8 @@
 		为了满足用户界面的权限设置需要，将用户组分成这些功能类别 
 		-->
 		<!-- 通用，所有T-ONE模块使用这个类别 -->
-		<record model="ir.module.category" id="base_core">
-			<field name="name">Base_core</field>
+		<record model="ir.module.category" id="odoo_base">
+			<field name="name">Odoo_Base</field>
 			<field name="sequence">1</field>
 		</record>
 		<!-- 以下为功能模块相关，给每个主菜单设置一个组便于理解 -->

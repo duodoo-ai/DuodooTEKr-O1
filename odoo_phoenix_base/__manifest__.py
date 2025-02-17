@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "声光报警集成方案",
+    'name': "Odoo SKF Phoemix API Base",
 
     'summary': """
     声光报警器设备运行监控平台
@@ -18,21 +18,17 @@
     'category': '中国化应用/声光报警集成方案',
     'version': '1.0',
 
-    'depends': ['base', 'mail', 'maintenance','base_core'],
+    'depends': ['base', 'mail', 'maintenance','odoo_base'],
 
     'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
-        'data/audible_base_data.xml',
-        'data/phoenix_protocol_data.xml',
-        'views/audible_alarm_view.xml',
-        'views/audible_diagnoses_view.xml',
-        'views/audible_dynamic_view.xml',
-        'views/audible_protocol_views.xml',
-        'views/audible_trend_view.xml',
-        'views/audible_alarm_backup_view.xml',
+        'data/phoenix_base_data.xml',
+        'views/phoenix_alarm_view.xml',
+        'views/phoenix_dynamic_view.xml',
+        'views/phoenix_alarm_backup_view.xml',
         'views/maintenance.xml',
-        'views/audible_menu_views.xml',
+        'views/phoenix_menu_views.xml',
     ],
     'demo': [
 

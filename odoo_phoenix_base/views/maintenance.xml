@@ -6,13 +6,48 @@
             <field name="model">maintenance.equipment</field>
             <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='category_id']" position="after">
-		    		<field name="complete_path" readonly="1" />
+                <field name="category_id" position="after">
+                    <field name="complete_path" readonly="1"/>
+                    <field name="parent_id"/>
+                </field>
+                <field name="location" position="after">
                     <field name="status" readonly="1"/>
-	            </xpath>
-                <xpath expr="//field[@name='owner_user_id']" position="after">
-		    		<field name="parent_id"/>
                     <field name="asset_serial" readonly="1"/>
+                </field>
+                <xpath expr="//notebook/page[@name='product_information']" position="before">
+                   <page string="测点数据" name="point_data">
+                        <field name="point_ids" readonly="1">
+                            <!-- 这里可以定义 One2many 字段的视图布局 -->
+                            <list>
+                                <field name="MachineID"/>
+                                <field name="PointID"/>
+                                <field name="name"/>
+                                <field name="monitor_date"/>
+                                <field name="speed"/>
+                                <field name="process"/>
+                                <field name="digit"/>
+                                <field name="unit"/>
+                                <field name="total"/>
+                                <field name="collection_date"/>
+                                <!-- 可以添加其他字段 -->
+                            </list>
+                            <form>
+                                <group>
+                                    <field name="MachineID"/>
+                                    <field name="PointID"/>
+                                    <field name="name"/>
+                                    <field name="monitor_date"/>
+                                    <field name="speed"/>
+                                    <field name="process"/>
+                                    <field name="digit"/>
+                                    <field name="unit"/>
+                                    <field name="total"/>
+                                    <field name="collection_date"/>
+                                    <!-- 可以添加其他字段 -->
+                                </group>
+                            </form>a
+                        </field>
+                    </page>
 	            </xpath>
             </field>
         </record>

@@ -33,3 +33,8 @@ class PhoenixDynamicMeasurements(models.Model):
         string='公司',
         change_default=True,
         default=lambda self: self.env.company)
+
+    measurement_point_id = fields.Many2one(
+        comodel_name='maintenance.equipment',
+        string='监测点'
+    )
