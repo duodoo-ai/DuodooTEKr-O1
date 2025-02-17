@@ -2,17 +2,11 @@
 <odoo>
     <menuitem
             id="menu_phoenix_root"
-            name="声光报警"
+            name="运行监测"
             web_icon="odoo_phoenix_base,static/description/icon.png"
             groups="tone_phoenix_api_user,tone_phoenix_api_manager"
             sequence="10005"/>
-        <menuitem
-            id="menu_phoenix_audible_protocol"
-            name="控制指令集"
-            action='action_phoenix_audible_protocol'
-            parent="menu_phoenix_root"
-            sequence="0"
-            groups="tone_phoenix_api_user,tone_phoenix_api_manager"/>
+
         <menuitem
             id="phoenix_optic_alarm_meu"
             name="告警数据"
@@ -41,15 +35,4 @@
         name="设备互联"
         web_icon="maintenance,static/description/icon.png"
         sequence="161"/>
-
-    <!--交“通讯协议指令集”作为基础数据归集维护-->
-    <menuitem
-        id="phoenix_audible_protocol_meu"
-        name="通讯协议指令集"
-        action='action_phoenix_audible_protocol'
-        parent="odoo_base.sub_interface_menu"
-        groups="tone_phoenix_api_manager"
-        sequence="1007"/>
-
-
 </odoo>
