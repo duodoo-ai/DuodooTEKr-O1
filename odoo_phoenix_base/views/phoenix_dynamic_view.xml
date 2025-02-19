@@ -45,7 +45,7 @@
     </record>
     
     <record id="action_phoenix_dynamic_measurements" model="ir.actions.act_window">
-        <field name="name">动态数据</field>
+        <field name="name">采集数据</field>
         <field name="res_model">phoenix.dynamic.measurements</field>
         <field name="view_mode">list</field>
         <field name="search_view_id" ref="phoenix_dynamic_measurements_search"/>

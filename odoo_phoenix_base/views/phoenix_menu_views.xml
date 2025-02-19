@@ -16,7 +16,7 @@
             sequence="5"/>
         <menuitem
             id="phoenix_dynamic_measurements_meu"
-            name="动态数据"
+            name="采集数据"
             action='action_phoenix_dynamic_measurements'
             parent="menu_phoenix_root"
             groups="tone_phoenix_api_dynamic,tone_phoenix_api_manager"
