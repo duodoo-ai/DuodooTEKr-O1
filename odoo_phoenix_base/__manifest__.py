@@ -30,6 +30,11 @@
         'views/maintenance.xml',
         'views/phoenix_menu_views.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'odoo_phoenix_base/static/src/css/custom_kanban_styles.css',
+        ],
+    },
     'demo': [
 
     ],

@@ -22,6 +22,57 @@
         </field>
     </record>
 
+    <record id="phoenix_dynamic_measurements_kanban" model="ir.ui.view">
+        <field name="name">phoenix.dynamic.measurements.kanban</field>
+        <field name="model">phoenix.dynamic.measurements</field>
+        <field name="arch" type="xml">
+            <kanban sample="1" create="0" delete="0" string="动态数据" class="o_kanban_small_column">
+                <field name="measurement_point_id"/>
+                <field name="monitor_date"/>
+                <field name='speed'/>
+                <field name='process'/>
+                <field name='digit'/>
+                <field name='unit'/>
+                <field name='total'/>
+                <field name='collection_date'/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click oe_semantic_html_override o_kanban_card_custom">
+                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+                                <div class="o_kanban_record_header">
+                                    <span class="oe_grey o_kanban_header_label">测点: <field name="measurement_point_id"/></span>
+                                </div>
+                                <div class="o_kanban_record_body_custom">
+                                    <div t-if="record.monitor_date.raw_value" class="o_kanban_info_row">
+                                        <span class="o_kanban_info_label">日期/时间:</span> <field name="monitor_date"/>
+                                    </div>
+                                    <div t-if="record.speed.raw_value" class="o_kanban_info_row">
+                                        <span class="o_kanban_info_label">速度:</span> <field name="speed"/>
+                                    </div>
+                                    <div t-if="record.process.raw_value" class="o_kanban_info_row">
+                                        <span class="o_kanban_info_label">进程:</span> <field name="process"/>
+                                    </div>
+                                    <div t-if="record.digit.raw_value" class="o_kanban_info_row">
+                                        <span class="o_kanban_info_label">数字:</span> <field name="digit"/>
+                                    </div>
+                                    <div t-if="record.unit.raw_value" class="o_kanban_info_row">
+                                        <span class="o_kanban_info_label">单位:</span> <field name="unit"/>
+                                    </div>
+                                    <div t-if="record.total.raw_value" class="o_kanban_info_row">
+                                        <span class="o_kanban_info_label">实测值:</span> <field name="total"/>
+                                    </div>
+                                    <div t-if="record.collection_date.raw_value" class="o_kanban_info_row">
+                                        <span class="o_kanban_info_label">采集时间:</span> <field name="collection_date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="phoenix_dynamic_measurements_search" model="ir.ui.view">
         <field name="name">phoenix.dynamic.measurements.search</field>
         <field name="model">phoenix.dynamic.measurements</field>
@@ -47,11 +98,12 @@
     <record id="action_phoenix_dynamic_measurements" model="ir.actions.act_window">
         <field name="name">采集数据</field>
         <field name="res_model">phoenix.dynamic.measurements</field>
-        <field name="view_mode">list</field>
+        <field name="view_mode">list,kanban</field>
         <field name="search_view_id" ref="phoenix_dynamic_measurements_search"/>
         <field name="view_ids"
            eval="[(5, 0, 0),
                   (0, 0, {'view_mode': 'list', 'view_id': ref('phoenix_dynamic_measurements_tree')}),
+                  (0, 0, {'view_mode': 'kanban', 'view_id': ref('phoenix_dynamic_measurements_kanban')}),
                   ]"/>
     </record>
 </odoo>
