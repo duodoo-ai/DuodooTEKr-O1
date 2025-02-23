@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_phoenix_dynamic_measurements_user,access.phoenix_dynamic_measurements_user,model_phoenix_dynamic_measurements,,1,0,0,0
-access_phoenix_optic_alarm_user,access.phoenix_optic_alarm_user,model_phoenix_optic_alarm,,1,0,0,0
-access_phoenix_optic_alarm_backup_user,access.phoenix_optic_alarm_backup_user,model_phoenix_optic_alarm_backup,,1,0,0,0
+access_phoenix_alarm_pool_user,access.phoenix_alarm_pool_user,model_phoenix_alarm_pool,,1,0,0,0
+access_phoenix_alarm_pool_backup_user,access.phoenix_alarm_pool_backup_user,model_phoenix_alarm_pool_backup,,1,0,0,0
 

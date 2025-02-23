@@ -8,9 +8,9 @@
             sequence="10005"/>
 
         <menuitem
-            id="phoenix_optic_alarm_meu"
-            name="告警数据"
-            action='action_phoenix_optic_alarm'
+            id="phoenix_alarm_pool_meu"
+            name="告警池"
+            action='action_phoenix_alarm_pool'
             parent="menu_phoenix_root"
             groups="tone_phoenix_api_user,tone_phoenix_api_manager"
             sequence="5"/>
@@ -22,9 +22,9 @@
             groups="tone_phoenix_api_dynamic,tone_phoenix_api_manager"
             sequence="15"/>
         <menuitem
-            id="phoenix_optic_alarm_backup_meu"
+            id="phoenix_alarm_pool_backup_meu"
             name="告警趋势分析"
-            action='action_phoenix_optic_alarm_backup'
+            action='action_phoenix_alarm_pool_backup'
             parent="menu_phoenix_root"
             groups="tone_phoenix_api_manager"
             sequence="1000"/>

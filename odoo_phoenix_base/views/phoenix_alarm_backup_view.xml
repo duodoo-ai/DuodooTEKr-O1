@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.ui.view" id="phoenix_optic_alarm_backup_tree">
-        <field name="name">phoenix.optic.alarm.backup.tree</field>
-        <field name="model">phoenix.optic.alarm.backup</field>
+    <record model="ir.ui.view" id="phoenix_alarm_pool_backup_tree">
+        <field name="name">phoenix.alarm.pool.backup.tree</field>
+        <field name="model">phoenix.alarm.pool.backup</field>
         <field name="arch" type="xml">
             <list string="告警趋势分析" delete="0" create="0" edit="0" default_order="id desc">
                 <field name="name" optional="show"/>
@@ -17,9 +17,9 @@
         </field>
     </record>
 
-    <record id="phoenix_optic_alarm_backup_kanban" model="ir.ui.view">
-        <field name="name">phoenix.optic.alarm.backup.kanban</field>
-        <field name="model">phoenix.optic.alarm.backup</field>
+    <record id="phoenix_alarm_pool_backup_kanban" model="ir.ui.view">
+        <field name="name">phoenix.alarm.pool.backup.kanban</field>
+        <field name="model">phoenix.alarm.pool.backup</field>
         <field name="arch" type="xml">
             <kanban sample="1" create="0" delete="0" string="告警趋势分析">
                 <field name="name" />
@@ -47,9 +47,9 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="phoenix_optic_alarm_backup_calendar">
-        <field name="name">phoenix.optic.alarm.backup.calendar</field>
-        <field name="model">phoenix.optic.alarm.backup</field>
+    <record model="ir.ui.view" id="phoenix_alarm_pool_backup_calendar">
+        <field name="name">phoenix.alarm.pool.backup.calendar</field>
+        <field name="model">phoenix.alarm.pool.backup</field>
         <field name="priority" eval="2"/>
         <field name="arch" type="xml">
             <calendar string="告警趋势分析" date_start="write_date" event_limit="5" mode="month" delete="false">
@@ -60,9 +60,9 @@
         </field>
     </record>
 
-    <record id="phoenix_optic_alarm_backup_search" model="ir.ui.view">
-        <field name="name">phoenix.optic.alarm.backup.search</field>
-        <field name="model">phoenix.optic.alarm.backup</field>
+    <record id="phoenix_alarm_pool_backup_search" model="ir.ui.view">
+        <field name="name">phoenix.alarm.pool.backup.search</field>
+        <field name="model">phoenix.alarm.pool.backup</field>
         <field name="arch" type="xml">
             <search string="告警趋势分析">
                  <filter string="今日数据" name="today" domain="[('monitor_time','=', current_date)]"/>
@@ -82,16 +82,16 @@
         </field>
     </record>
 
-    <record id="action_phoenix_optic_alarm_backup" model="ir.actions.act_window">
+    <record id="action_phoenix_alarm_pool_backup" model="ir.actions.act_window">
         <field name="name">告警趋势分析</field>
-        <field name="res_model">phoenix.optic.alarm.backup</field>
+        <field name="res_model">phoenix.alarm.pool.backup</field>
         <field name="view_mode">list,kanban,calendar</field>
-        <field name="search_view_id" ref="phoenix_optic_alarm_backup_search"/>
+        <field name="search_view_id" ref="phoenix_alarm_pool_backup_search"/>
         <field name="view_ids"
            eval="[(5, 0, 0),
-                  (0, 0, {'view_mode': 'list', 'view_id': ref('phoenix_optic_alarm_backup_tree')}),
-                  (0, 0, {'view_mode': 'kanban', 'view_id': ref('phoenix_optic_alarm_backup_kanban')}),
-                  (0, 0, {'view_mode': 'calendar', 'view_id': ref('phoenix_optic_alarm_backup_calendar')}),
+                  (0, 0, {'view_mode': 'list', 'view_id': ref('phoenix_alarm_pool_backup_tree')}),
+                  (0, 0, {'view_mode': 'kanban', 'view_id': ref('phoenix_alarm_pool_backup_kanban')}),
+                  (0, 0, {'view_mode': 'calendar', 'view_id': ref('phoenix_alarm_pool_backup_calendar')}),
                   ]"/>
     </record>
 </odoo>
