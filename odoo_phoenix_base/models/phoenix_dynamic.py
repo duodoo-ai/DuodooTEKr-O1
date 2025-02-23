@@ -26,7 +26,7 @@ class PhoenixDynamicMeasurements(models.Model):
     digit = fields.Float(string="数字", digits='Digit', help='从服务器上获得实时测值')
     unit = fields.Char(string="单位", help='从服务器上获得实时测值')
     total = fields.Float(string="实测值", digits='Total', help='从服务器上获得实时测值')
-    collection_date = fields.Datetime(string='采集时间', default=fields.Datetime.now(),
+    collection_date = fields.Datetime(string='采集时间', default=fields.Datetime.now,
                                    help='从服务器上获得实时测值。监测时间。')
     company_id = fields.Many2one(
         'res.company',
@@ -38,3 +38,10 @@ class PhoenixDynamicMeasurements(models.Model):
         comodel_name='maintenance.equipment',
         string='监测点'
     )
+
+    def name_get(self):
+        result = []
+        for record in self:
+            name = f"{record.MachineID} + {record.name}"
+            result.append((record.id, name))
+        return result

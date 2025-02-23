@@ -23,7 +23,7 @@ class PhoenixAlarmPool(models.Model):
     monitor_code = fields.Char(string="序列号", help='从下位系统写入')
     async_state = fields.Integer(string='告警状态', default=0, help='0：从下位系统写入获得告警状态；1：告警动作已触发')
     async_time = fields.Datetime(string='告警时间', help='从下位系统写入')
-    active = fields.Boolean(string='状态', defautl=True, help='从下位系统写入')
+    active = fields.Boolean(string='状态', default=True, help='从下位系统写入')
     default_code = fields.Char(string='序号', index=True, help='从下位系统写入')
     company_id = fields.Many2one(
         'res.company',
