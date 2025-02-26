@@ -17,7 +17,7 @@
     <!--子模块，子菜单菜单-->
     <menuitem
         id="menu_equipment_form_meu"
-        name="设备管理"
+        name="设备运行监控"
         parent="menu_phoenix_root"
         groups="maintenance.group_equipment_manager,base.group_user"
         sequence="5"/>
@@ -39,7 +39,7 @@
     <!--子模块，子菜单菜单-->
     <menuitem
         id="menu_requests_form_meu"
-        name="维护管理"
+        name="设备智能运维"
         parent="menu_phoenix_root"
         groups="maintenance.group_equipment_manager,base.group_user"
         sequence="5"/>
