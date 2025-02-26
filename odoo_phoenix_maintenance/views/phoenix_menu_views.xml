@@ -26,7 +26,7 @@
             name="设备台账"
             parent="menu_equipment_form_meu"
             action="maintenance.hr_equipment_action"
-            groups="tone_phoenix_api_user,tone_phoenix_api_manager"
+            groups="maintenance.group_equipment_manager,base.group_user"
             sequence="2"/>
         <menuitem
             id="phoenix_alarm_pool_sub"
@@ -84,7 +84,7 @@
         id="menu_maintenance_configuration_meu"
         name="配置"
         parent="menu_phoenix_root"
-        groups="maintenance.group_equipment_manager"
+        groups="maintenance.group_equipment_manager,base.group_user"
         sequence="100"/>
     <menuitem
         id="menu_maintenance_teams"
@@ -107,14 +107,4 @@
         action="maintenance.hr_equipment_stage_action"
         groups="maintenance.group_equipment_manager"
         sequence="3"/>
-
-
-    <!--重命名原“维护”菜单为新“设备互联”菜单-->
-    <!-- Menu items hierachy -->
-<!--    <menuitem-->
-<!--        id="menu_maintenance_title"-->
-<!--        name="Maintenance"-->
-<!--        web_icon="maintenance,static/description/icon.png"-->
-<!--        sequence="160"/>-->
-
 </odoo>

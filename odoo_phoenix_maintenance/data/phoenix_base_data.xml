@@ -8,15 +8,15 @@
         </record>
         <record id='decimal_process' model="decimal.precision">
             <field name="name">Process</field>
-            <field name="digits" eval="2"/>
+            <field name="digits" eval="4"/>
         </record>
         <record id='decimal_digit' model="decimal.precision">
             <field name="name">Digit</field>
-            <field name="digits" eval="2"/>
+            <field name="digits" eval="4"/>
         </record>
         <record id='decimal_total' model="decimal.precision">
             <field name="name">Total</field>
-            <field name="digits" eval="2"/>
+            <field name="digits" eval="4"/>
         </record>
     </data>
 </odoo>

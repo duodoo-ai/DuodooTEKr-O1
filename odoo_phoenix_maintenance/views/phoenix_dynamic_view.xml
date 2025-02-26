@@ -131,7 +131,7 @@
             <pivot string="告警趋势分析" default_order="measurement_point_id asc" sample="1">
                 <!-- 行分组 -->
                 <field name="complete_path" type="row"/>
-                <field name="name" type="row"/>
+<!--                <field name="name" type="row"/>-->
                 <!-- 测量值 -->
                 <field name="speed" type="measure"/>
                 <field name="process" type="measure"/>
@@ -148,7 +148,7 @@
             <graph string="告警趋势分析" type="line" order="measurement_point_id asc">     <!--bar (default), pie , line-->
                 <!-- 行分组 -->
                 <field name="complete_path" type="row"/>
-                <field name="name" type="row"/>
+<!--                <field name="name" type="row"/>-->
                 <!-- 测量值 -->
                 <field name="speed" type="measure"/>
                 <field name="process" type="measure"/>

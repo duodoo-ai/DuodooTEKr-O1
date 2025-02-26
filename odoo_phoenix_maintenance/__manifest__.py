@@ -21,13 +21,13 @@
     'depends': ['base', 'mail', 'web', 'maintenance','odoo_base'],
 
     'data': [
-        'security/groups.xml',
         'security/ir.model.access.csv',
         'data/phoenix_base_data.xml',
         'views/phoenix_alarm_view.xml',
         'views/phoenix_dynamic_view.xml',
         'views/maintenance.xml',
         'views/phoenix_menu_views.xml',
+        'views/menu_hide_views.xml',
     ],
     'demo': [
 
