@@ -16,7 +16,7 @@ os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 class MaintenanceEquipment(models.Model):
     _inherit = 'maintenance.equipment'
 
-    asset_serial = fields.Char(string='唯一ID', copy=False, help="SKF Phoenix API设备或测点唯一ID")
+    asset_serial = fields.Char(string='测点ID', copy=False, help="测点唯一ID")
     complete_path = fields.Char(string='完整名称', copy=False)
     status = fields.Char(string='设备状态', copy=False)
     parent_id = fields.Many2one('maintenance.equipment', string='设备目录')
@@ -28,8 +28,10 @@ class MaintenanceEquipment(models.Model):
         string='测点数据'
     )
 
-    level_warning = fields.Integer(string='低警告(域值报警)', default=0, copy=False)
-    level_alarm = fields.Integer(string='高报警(域值报警)', default=0, copy=False)
+    high_alarm = fields.Float(string='高报警', default=100, copy=False, help='域值报警')
+    lower_alarm = fields.Float(string='低报警', default=80, copy=False, help='域值报警')
+    high_warning = fields.Float(string='高警告', default=0, copy=False, help='域值报警')
+    lower_warning = fields.Float(string='低警告', default=0, copy=False, help='域值报警')
 
     @api.constrains('parent_id')
     def _check_parent_id(self):

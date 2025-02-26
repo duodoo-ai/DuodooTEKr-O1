@@ -17,6 +17,7 @@
                 <field name='total' optional="show"/>
                 <field name='collection_date' optional="show"/>
                 <field name="company_id" groups="base.group_multi_company"/>
+                <field name='async_state' optional="hide"/>
                 <field name="id"/>
             </list>
         </field>
@@ -106,6 +107,7 @@
                 <searchpanel>
                     <field name="company_id" expand="1" groups="base.group_multi_company" icon="fa-building" enable_counters="1"/>
                     <field name="measurement_point_id" hierarchize="1" select="one" limit="2000" expand="1" icon="fa-users" enable_counters="1"/>
+                    <field name="category_id" hierarchize="1" select="one" limit="2000" expand="1" icon="fa-users" enable_counters="1"/>
                 </searchpanel>
             </search>
         </field>

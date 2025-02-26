@@ -28,6 +28,7 @@ class PhoenixDynamicMeasurements(models.Model):
     total = fields.Float(string="实测值", digits='Total', help='从服务器上获得实时测值')
     collection_date = fields.Datetime(string='采集时间', default=fields.Datetime.now,
                                    help='从服务器上获得实时测值。监测时间。')
+    async_state = fields.Integer(string='告警状态', default=0, help='从下位系统写入')
     company_id = fields.Many2one(
         'res.company',
         string='公司',
@@ -38,4 +39,11 @@ class PhoenixDynamicMeasurements(models.Model):
         comodel_name='maintenance.equipment',
         string='监测点'
     )
+    high_alarm = fields.Float(related='measurement_point_id.high_alarm', string='高报警', copy=False, help='域值报警')
+    lower_alarm = fields.Float(related='measurement_point_id.lower_alarm', string='低报警', copy=False, help='域值报警')
+    high_warning = fields.Float(related='measurement_point_id.high_warning', string='高警告', copy=False, help='域值报警')
+    lower_warning = fields.Float(related='measurement_point_id.lower_warning', string='低警告', copy=False, help='域值报警')
+
     complete_path = fields.Char(related='measurement_point_id.complete_path', index=True, string='完整名称', copy=False)
+    category_id = fields.Many2one(related='measurement_point_id.category_id', string='设备类别',)
+

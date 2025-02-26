@@ -78,6 +78,25 @@
             action="hr_equipment_request_preventive_action"
             groups="maintenance.group_equipment_manager,base.group_user"
             sequence="25"/>
+    <!--子模块，设置子菜单-->
+    <menuitem
+        id="menu_m_reports_meu"
+        name="设备运行分析"
+        parent="menu_phoenix_root"
+        groups="maintenance.group_equipment_manager,base.group_user"
+        sequence="25"/>
+        <menuitem
+            id="menu_m_reports_oee_sub"
+            name="Overall Equipment Effectiveness (OEE)"
+            parent="menu_m_reports_meu"
+            groups="maintenance.group_equipment_manager,base.group_user"
+            sequence="1"/>
+        <menuitem
+            id="menu_m_reports_losses_sub"
+            name="Losses Analysis"
+            parent="menu_m_reports_meu"
+            groups="maintenance.group_equipment_manager,base.group_user"
+            sequence="2"/>
 
     <!--子模块，设置子菜单-->
     <menuitem
@@ -92,19 +111,26 @@
         parent="menu_maintenance_configuration_meu"
         action="maintenance.maintenance_team_action_settings"
         groups="maintenance.group_equipment_manager"
-        sequence="1"/>
+        sequence="11"/>
     <menuitem
         id="menu_maintenance_cat"
         name="设备类别"
         parent="menu_maintenance_configuration_meu"
         action="maintenance.hr_equipment_category_action"
         groups="maintenance.group_equipment_manager"
-        sequence="2"/>
+        sequence="12"/>
     <menuitem
         id="menu_maintenance_stage_configuration"
         name="保养阶段"
         parent="menu_maintenance_configuration_meu"
         action="maintenance.hr_equipment_stage_action"
         groups="maintenance.group_equipment_manager"
-        sequence="3"/>
+        sequence="13"/>
+    <menuitem
+        id="maintenance_menu_config_activity_type_meu"
+        name="活动类型"
+        action="maintenance.mail_activity_type_action_config_maintenance"
+        parent="menu_maintenance_configuration_meu"
+        sequence="1500"
+        groups="base.group_no_one"/>
 </odoo>

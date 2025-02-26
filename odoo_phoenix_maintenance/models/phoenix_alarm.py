@@ -29,6 +29,13 @@ class PhoenixAlarmPool(models.Model):
         change_default=True,
         default=lambda self: self.env.company)
 
+    measurement_point_id = fields.Many2one(
+        comodel_name='maintenance.equipment',
+        string='监测点'
+    )
+    complete_path = fields.Char(related='measurement_point_id.complete_path', index=True, string='完整名称', copy=False)
+    category_id = fields.Many2one(related='measurement_point_id.category_id', string='设备类别',)
+
     # def create(self, vals_list):
     #     for val in vals_list:
     #         if not val.get('default_code'):
