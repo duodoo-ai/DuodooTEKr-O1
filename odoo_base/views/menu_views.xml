@@ -4,7 +4,7 @@
         <menuitem id='root_menu'
                 name='基础档案'
                 web_icon="odoo_base,static/description/icon.png"
-                sequence="20000"/>
+                sequence="490"/>
 
         <menuitem
                 name="基本配置"

@@ -38,10 +38,4 @@ class PhoenixDynamicMeasurements(models.Model):
         comodel_name='maintenance.equipment',
         string='监测点'
     )
-
-    def name_get(self):
-        result = []
-        for record in self:
-            name = f"{record.MachineID} + {record.name}"
-            result.append((record.id, name))
-        return result
+    complete_path = fields.Char(related='measurement_point_id.complete_path', index=True, string='完整名称', copy=False)

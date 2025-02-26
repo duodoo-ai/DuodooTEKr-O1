@@ -28,6 +28,9 @@ class MaintenanceEquipment(models.Model):
         string='测点数据'
     )
 
+    level_warning = fields.Integer(string='低警告(域值报警)', default=0, copy=False)
+    level_alarm = fields.Integer(string='高报警(域值报警)', default=0, copy=False)
+
     @api.constrains('parent_id')
     def _check_parent_id(self):
         """上级目录不能选择自己和下级的目录"""

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Odoo SKF Phoemix API Base",
+    'name': "Odoo Smart Diagnostic Platform",
 
     'summary': """
-    声光报警器设备运行监控平台
+    Odoo Smart Diagnostic Platform
     """,
 
-    'description': """声光报警器设备运行监控平台
+    'description': """Odoo Smart Diagnostic Platform 设备智慧诊断平台
                     更多支持：
                     18951631470
                     zou.jason@qq.com
@@ -15,10 +15,10 @@
     'author': "Jason Zou",
     "website": "www.duodoo.tech",
 
-    'category': '中国化应用/声光报警集成方案',
+    'category': '中国化应用/设备智慧诊断平台',
     'version': '1.0',
 
-    'depends': ['base', 'mail', 'maintenance','odoo_base'],
+    'depends': ['base', 'mail', 'web', 'maintenance','odoo_base'],
 
     'data': [
         'security/groups.xml',
@@ -29,12 +29,6 @@
         'views/maintenance.xml',
         'views/phoenix_menu_views.xml',
     ],
-    'assets': {
-        'web.assets_backend': [
-            'odoo_phoenix_base/static/src/css/custom_kanban_styles.css',
-            'odoo_phoenix_base/static/js/graph_view_init.js',
-        ],
-    },
     'demo': [
 
     ],

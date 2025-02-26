@@ -9,10 +9,12 @@
                 <field name="category_id" position="after">
                     <field name="complete_path" readonly="1"/>
                     <field name="parent_id"/>
+                    <field name="status" readonly="1"/>
                 </field>
                 <field name="location" position="after">
-                    <field name="status" readonly="1"/>
                     <field name="asset_serial" readonly="1"/>
+                    <field name="level_warning"/>
+                    <field name="level_alarm"/>
                 </field>
                 <xpath expr="//notebook/page[@name='product_information']" position="before">
                    <page string="测点数据" name="point_data">
@@ -57,9 +59,14 @@
             <field name="model">maintenance.equipment</field>
             <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="asset_serial" optional="show"/>
+	            </xpath>
 		    	<xpath expr="//field[@name='category_id']" position="after">
                     <field name="parent_id" optional="show"/>
 		    		<field name="complete_path" optional="show"/>
+                    <field name="level_warning" optional="show"/>
+                    <field name="level_alarm" optional="show"/>
                     <field name="status" optional="show"/>
 	            </xpath>
             </field>
@@ -111,14 +118,6 @@
             </field>
         </record>
 
-        <menuitem
-            id="menu_m_request_corrective_form"
-            name="纠正性维护"
-            parent="maintenance.menu_m_request"
-            action="hr_equipment_request_corrective_action"
-            groups="maintenance.group_equipment_manager,base.group_user"
-            sequence="10"/>
-
         <!-- 维护请求: 预防性维护 -->
         <record id="hr_equipment_request_preventive_action" model="ir.actions.act_window">
             <field name="name">预防性维护</field>
@@ -137,13 +136,5 @@
                 </p>
             </field>
         </record>
-
-        <menuitem
-            id="menu_m_request_preventive_form"
-            name="预防性维护"
-            parent="maintenance.menu_m_request"
-            action="hr_equipment_request_preventive_action"
-            groups="maintenance.group_equipment_manager,base.group_user"
-            sequence="15"/>
     </data>
 </odoo>

@@ -94,12 +94,12 @@
                 <filter string="上月数据" name="month2" domain="[('monitor_date','&lt;', time.strftime('%Y-%m-01')),('monitor_date','&gt;=',  (context_today() - relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
                 <filter string="本年数据" name="year" domain="[('monitor_date','&lt;=', time.strftime('%Y-12-31')),('monitor_date','&gt;=', time.strftime('%Y-01-01'))]"/>
                 <separator/>
-                <group expand="1" string="分组">
+                <group expand="0" string="分组">
                     <filter string="监测点" name="group_measurement_point" context="{'group_by':'measurement_point_id'}"/>
                     <filter string="测点" name="group_name" context="{'group_by':'name'}"/>
                     <filter string="设备ID" name="group_MachineID" context="{'group_by':'MachineID'}"/>
                     <filter string="测点ID" name="group_PointID" context="{'group_by':'PointID'}"/>
-                    <filter string="监测时间" name="group_monitor_date" interval="day" default="1" context="{'group_by':'monitor_date:day'}"/>
+                    <filter string="监测时间" name="group_monitor_date" context="{'group_by':'monitor_date:day'}"/>
                     <filter string="采集时间" name="group_collection_date" context="{'group_by':'collection_date'}"/>
                 </group>
                 <!--增加设备视图左侧树状菜单-->
@@ -117,9 +117,9 @@
         <field name="priority" eval="2"/>
         <field name="arch" type="xml">
             <calendar string="告警趋势分析" date_start="write_date" event_limit="5" mode="month" delete="false">
+                <field name="measurement_point_id"/>
                 <field name="name"/>
-                <field name="write_date" string="处理日期"/>
-                <field name="write_uid" string="处理人"/>
+                <field name="monitor_date" string="监测时间"/>
             </calendar>
         </field>
     </record>
@@ -130,15 +130,13 @@
         <field name="arch" type="xml">
             <pivot string="告警趋势分析" default_order="measurement_point_id asc" sample="1">
                 <!-- 行分组 -->
-                <field name="measurement_point_id" type="row"/>
-                <field name="monitor_date" interval="day" type="row"/>
+                <field name="complete_path" type="row"/>
                 <field name="name" type="row"/>
                 <!-- 测量值 -->
+                <field name="speed" type="measure"/>
+                <field name="process" type="measure"/>
+                <field name="digit" type="measure"/>
                 <field name="total" type="measure"/> <!-- 默认测量值 -->
-                <field name="speed" optional="measure"/>
-                <field name="process" optional="measure"/>
-                <field name="digit" optional="measure"/>
-                <field name="unit" optional="measure"/>
             </pivot>
         </field>
     </record>
@@ -149,15 +147,13 @@
         <field name="arch" type="xml">
             <graph string="告警趋势分析" type="line" order="measurement_point_id asc">     <!--bar (default), pie , line-->
                 <!-- 行分组 -->
-                <field name="measurement_point_id" type="row"/>
-                <field name="monitor_date" interval="day" type="row"/>
+                <field name="complete_path" type="row"/>
                 <field name="name" type="row"/>
                 <!-- 测量值 -->
+                <field name="speed" type="measure"/>
+                <field name="process" type="measure"/>
+                <field name="digit" type="measure"/>
                 <field name="total" type="measure"/> <!-- 默认测量值 -->
-                <field name="speed" optional="measure"/>
-                <field name="process" optional="measure"/>
-                <field name="digit" optional="measure"/>
-                <field name="unit" optional="measure"/>
             </graph>
         </field>
     </record>
@@ -165,16 +161,15 @@
     <record id="action_phoenix_dynamic_measurements" model="ir.actions.act_window">
         <field name="name">告警趋势分析</field>
         <field name="res_model">phoenix.dynamic.measurements</field>
-        <field name="view_mode">graph,pivot,kanban,calendar,list</field>
-        <field name="context">{
-            'search_default_group_measurement_point':1,
-            'search_default_group_name':1,
-            'search_default_group_monitor_date': 1,
-            }</field>
+        <field name="view_mode">pivot,kanban,calendar,list</field>
+<!--        <field name="context">{-->
+<!--            'search_default_group_measurement_point':1,-->
+<!--            'search_default_group_name':1,-->
+<!--            'search_default_group_monitor_date': 1,-->
+<!--            }</field>-->
         <field name="search_view_id" ref="phoenix_dynamic_measurements_search"/>
         <field name="view_ids"
            eval="[(5, 0, 0),
-                  (0, 0, {'view_mode': 'graph', 'view_id': ref('phoenix_dynamic_measurements_graph')}),
                   (0, 0, {'view_mode': 'pivot', 'view_id': ref('phoenix_dynamic_measurements_pivot')}),
                   (0, 0, {'view_mode': 'kanban', 'view_id': ref('phoenix_dynamic_measurements_kanban')}),
                   (0, 0, {'view_mode': 'calendar', 'view_id': ref('phoenix_dynamic_measurements_calendar')}),

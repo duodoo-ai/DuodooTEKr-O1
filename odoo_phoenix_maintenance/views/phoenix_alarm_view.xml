@@ -8,8 +8,6 @@
                 <field name="name" optional="show"/>
                 <field name="monitor_time" string="监测时间" optional="show"/>
                 <field name='monitor_value' optional="show"/>
-                <field name='monitor_code' optional="show"/>
-                <field name='async_state' optional="show"/>
                 <field name='async_time' optional="show"/>
                 <field name="company_id" optional="hide"/>
                 <field name="id" optional="hide"/>
