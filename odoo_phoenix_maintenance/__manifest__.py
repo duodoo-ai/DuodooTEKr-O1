@@ -26,6 +26,7 @@
         'views/phoenix_alarm_view.xml',
         'views/phoenix_dynamic_view.xml',
         'views/maintenance.xml',
+        'views/maintenance_origin_view.xml',
         'views/phoenix_menu_views.xml',
         'views/menu_hide_views.xml',
     ],

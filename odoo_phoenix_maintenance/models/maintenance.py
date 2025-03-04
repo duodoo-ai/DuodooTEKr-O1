@@ -28,10 +28,14 @@ class MaintenanceEquipment(models.Model):
         string='测点数据'
     )
 
-    high_alarm = fields.Float(string='高报警', default=100, copy=False, help='域值报警')
-    lower_alarm = fields.Float(string='低报警', default=80, copy=False, help='域值报警')
-    high_warning = fields.Float(string='高警告', default=0, copy=False, help='域值报警')
-    lower_warning = fields.Float(string='低警告', default=0, copy=False, help='域值报警')
+    alarm_origin = fields.Selection([
+        ('设备转速', '设备转速'),
+        ('振动速度', '振动速度'),
+        ('温度', '温度'),
+        ('二段加速度包络', '二段加速度包络'),
+        ('三段加速度包络', '三段加速度包络')], string='类型', help='通过选择对应项，作为域值报警判断依据')
+    high_alarm = fields.Float(string='报警', default=0, copy=False, help='域值报警')
+    lower_warning = fields.Float(string='警告', default=0, copy=False, help='域值报警')
 
     @api.constrains('parent_id')
     def _check_parent_id(self):

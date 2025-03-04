@@ -39,10 +39,9 @@ class PhoenixDynamicMeasurements(models.Model):
         comodel_name='maintenance.equipment',
         string='监测点'
     )
-    high_alarm = fields.Float(related='measurement_point_id.high_alarm', string='高报警', copy=False, help='域值报警')
-    lower_alarm = fields.Float(related='measurement_point_id.lower_alarm', string='低报警', copy=False, help='域值报警')
-    high_warning = fields.Float(related='measurement_point_id.high_warning', string='高警告', copy=False, help='域值报警')
-    lower_warning = fields.Float(related='measurement_point_id.lower_warning', string='低警告', copy=False, help='域值报警')
+    alarm_origin = fields.Selection(related='measurement_point_id.alarm_origin', string='类型', help='通过选择对应项，作为域值报警判断依据')
+    high_alarm = fields.Float(related='measurement_point_id.high_alarm', string='报警', copy=False, help='域值报警')
+    lower_warning = fields.Float(related='measurement_point_id.lower_warning', string='警告', copy=False, help='域值报警')
 
     complete_path = fields.Char(related='measurement_point_id.complete_path', index=True, string='完整名称', copy=False)
     category_id = fields.Many2one(related='measurement_point_id.category_id', string='设备类别',)

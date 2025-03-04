@@ -52,10 +52,11 @@
                 <xpath expr="//notebook/page[@name='maintenance']" position="after">
                    <page string="报警域值" name="maintenance_alarm">
                         <group>
-                            <field name="high_alarm"/>
-                            <field name="lower_alarm"/>
-                            <field name="high_warning"/>
-                            <field name="lower_warning"/>
+                            <group>
+                                <field name="alarm_origin"/>
+                                <field name="high_alarm"/>
+                                <field name="lower_warning"/>
+                            </group>
                         </group>
                     </page>
 	            </xpath>
@@ -73,10 +74,9 @@
 		    	<xpath expr="//field[@name='category_id']" position="after">
                     <field name="parent_id" optional="show"/>
 		    		<field name="complete_path" optional="show"/>
-                    <field name="status" invisible="1" optional="show"/>
+                    <field name="status" invisible="1" optional="hide"/>
+                    <field name="alarm_origin" optional="hide"/>
                     <field name="high_alarm" optional="hide"/>
-                    <field name="lower_alarm" optional="hide"/>
-                    <field name="high_warning" optional="hide"/>
                     <field name="lower_warning" optional="hide"/>
 	            </xpath>
             </field>

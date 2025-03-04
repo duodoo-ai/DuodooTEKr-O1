@@ -16,8 +16,11 @@
                 <field name='unit' optional="show"/>
                 <field name='total' optional="show"/>
                 <field name='collection_date' optional="show"/>
+                <field name='alarm_origin' optional="show"/>
+                <field name='high_alarm' optional="show"/>
+                <field name='lower_warning' optional="show"/>
                 <field name="company_id" groups="base.group_multi_company"/>
-                <field name='async_state' optional="hide"/>
+                <field name='async_state' optional="show"/>
                 <field name="id"/>
             </list>
         </field>

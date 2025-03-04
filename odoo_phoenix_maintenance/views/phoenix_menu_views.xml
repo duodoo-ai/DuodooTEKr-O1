@@ -106,6 +106,13 @@
         groups="maintenance.group_equipment_manager,base.group_user"
         sequence="100"/>
     <menuitem
+        id="menu_maintenance_equipment_origin"
+        name="报警域值"
+        parent="menu_maintenance_configuration_meu"
+        action="action_maintenance_equipment_origin"
+        groups="maintenance.group_equipment_manager"
+        sequence="10"/>
+    <menuitem
         id="menu_maintenance_teams"
         name="保养团队"
         parent="menu_maintenance_configuration_meu"
