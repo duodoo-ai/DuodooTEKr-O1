@@ -28,6 +28,9 @@ This module modifies web plugins to provide excellent design and responsiveness.
         # "views/auth_signup_templates.xml",
     ],
     "assets": {
+        "web.report_assets_common": [
+            ("replace", "web/static/fonts/fonts.scss", "eist_web_theme/static/fonts/fonts.scss"),
+        ],
         "web._assets_primary_variables": [
             (
                 "after",
@@ -75,6 +78,8 @@ This module modifies web plugins to provide excellent design and responsiveness.
             ("remove", "eist_web_theme/static/src/views/pivot/**"),
             # Don't include dark mode files in light mode
             ("remove", "eist_web_theme/static/src/**/*.dark.scss"),
+            "eist_web_theme/static/src/chatter/**/*",
+            "eist_web_theme/static/src/components/**/*",
         ],
         "web.assets_backend_lazy": [
             "eist_web_theme/static/src/views/pivot/**",

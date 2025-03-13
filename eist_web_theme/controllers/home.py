@@ -8,8 +8,8 @@ from pickle import TRUE
 from odoo import http
 from odoo.exceptions import AccessError
 from odoo.http import request
-from odoo.addons.web.controllers.home import Home as WebHome
-from odoo.addons.web.controllers.utils import is_user_internal, ensure_db
+from odoo.addons.web.controllers.home import Home as WebHome # type: ignore
+from odoo.addons.web.controllers.utils import is_user_internal, ensure_db # type: ignore
 
 
 class Home(WebHome):

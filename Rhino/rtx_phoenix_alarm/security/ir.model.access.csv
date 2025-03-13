@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rtx_phoenix_audible_address,access.rtx_phoenix_audible_address,model_rtx_phoenix_audible_address,,1,1,1,1
+access_rtx_socket_server_start,access.rtx_socket_server_start,model_rtx_socket_server_start,,1,1,1,1
+
+access_rtx_alarm_autovacuum,access.rtx_alarm_autovacuum,model_rtx_alarm_autovacuum,,1,1,1,1
+
+
+

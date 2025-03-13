@@ -63,7 +63,7 @@ class ResConfigSettings(models.TransientModel):
 
     # 3.Theme color
     # ------------------------------------------------------------
-    theme_color = fields.Selection(related="company_id.theme_color", readonly=False)
+    theme_color = fields.Integer(related="company_id.theme_color", readonly=False)
 
     # 4.Sidebar menu
     # ------------------------------------------------------------
@@ -85,9 +85,9 @@ class ResConfigSettings(models.TransientModel):
     display_scroll_top_button = fields.Boolean(
         related="company_id.display_scroll_top_button", readonly=False
     )
-    list_herder_fixed = fields.Boolean(
-        related="company_id.list_herder_fixed", readonly=False
-    )
+    # list_herder_fixed = fields.Boolean(
+    #     related="company_id.list_herder_fixed", readonly=False
+    # )
     list_rows_limit = fields.Selection(
         related="company_id.list_rows_limit", readonly=False
     )

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-15 15:55+0000\n"
-"PO-Revision-Date: 2024-12-16 00:02+0800\n"
+"POT-Creation-Date: 2025-03-11 08:57+0000\n"
+"PO-Revision-Date: 2025-03-11 17:00+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -167,7 +167,7 @@ msgstr "登录页面上的技术支持链接。"
 #. odoo-javascript
 #: code:addons/eist_web_theme/static/src/webclient/settings_form_view/widgets/navigation.xml:0
 msgid "About"
-msgstr "关于 "
+msgstr "关于"
 
 #. module: eist_web_theme
 #. odoo-javascript
@@ -219,6 +219,14 @@ msgstr "基础设置"
 #: code:addons/eist_web_theme/static/src/webclient/settings_form_view/widgets/navigation.xml:0
 msgid "Base settings"
 msgstr "基础设置"
+
+#. module: eist_web_theme
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Blue"
+msgstr "蓝色"
 
 #. module: eist_web_theme
 #: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__form_chatter_position__2
@@ -288,7 +296,7 @@ msgstr "公司徽标，用于显示网站品牌。"
 #. module: eist_web_theme
 #: model:ir.model,name:eist_web_theme.model_res_config_settings
 msgid "Config Settings"
-msgstr "配置设置"
+msgstr "配置设定"
 
 #. module: eist_web_theme
 #: model:ir.model.fields,field_description:eist_web_theme.field_res_company__copyright
@@ -320,11 +328,6 @@ msgid "Custom technical support"
 msgstr "自定义技术支持"
 
 #. module: eist_web_theme
-#: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__theme_color__darkblue
-msgid "Dark Blue"
-msgstr "深蓝色"
-
-#. module: eist_web_theme
 #. odoo-javascript
 #: code:addons/eist_web_theme/static/src/webclient/color_scheme/color_scheme_menu_items.js:0
 #: code:addons/eist_web_theme/static/src/webclient/systray_items/user_menu/user_menu.js:0
@@ -342,11 +345,6 @@ msgstr "数据库到期："
 #: code:addons/eist_web_theme/static/src/webclient/systray_items/user_menu/user_menu_items.js:0
 msgid "Deactivate the developer mode"
 msgstr "停用开发者模式"
-
-#. module: eist_web_theme
-#: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__theme_color__deep_purple
-msgid "Deep purple"
-msgstr "深紫色"
 
 #. module: eist_web_theme
 #. odoo-javascript
@@ -517,9 +515,20 @@ msgid "Full System Name"
 msgstr "完整的系统名称"
 
 #. module: eist_web_theme
-#: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__theme_color__grey
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Green"
+msgstr "绿色"
+
+#. module: eist_web_theme
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
 msgid "Grey"
-msgstr "灰色"
+msgstr "Grey"
 
 #. module: eist_web_theme
 #: model:ir.model,name:eist_web_theme.model_ir_http
@@ -572,6 +581,14 @@ msgstr "如果选中，则用户将无法设置主题，只能使用全局主题
 
 #. module: eist_web_theme
 #. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Indigo"
+msgstr "靛蓝"
+
+#. module: eist_web_theme
+#. odoo-javascript
 #: code:addons/eist_web_theme/static/src/webclient/settings_form_view/widgets/navigation.xml:0
 msgid "Industry Solution"
 msgstr "行业解决方案"
@@ -595,34 +612,26 @@ msgid "Last Updated on"
 msgstr "最后更新时间"
 
 #. module: eist_web_theme
-#: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__theme_color__light
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Lavender"
+msgstr "淡紫色"
+
+#. module: eist_web_theme
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
 msgid "Light"
 msgstr "浅色"
-
-#. module: eist_web_theme
-#: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__theme_color__default
-msgid "Light Blue"
-msgstr "浅蓝"
-
-#. module: eist_web_theme
-#: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__theme_color__light2
-msgid "Light2"
-msgstr "浅色2"
 
 #. module: eist_web_theme
 #. odoo-javascript
 #: code:addons/eist_web_theme/static/src/webclient/systray_items/theme_menu/theme_panel.xml:0
 msgid "List"
 msgstr "列表"
-
-#. module: eist_web_theme
-#. odoo-javascript
-#: code:addons/eist_web_theme/static/src/webclient/systray_items/theme_menu/theme_panel.xml:0
-#: model:ir.model.fields,field_description:eist_web_theme.field_res_company__list_herder_fixed
-#: model:ir.model.fields,field_description:eist_web_theme.field_res_config_settings__list_herder_fixed
-#: model:ir.model.fields,field_description:eist_web_theme.field_res_theme__list_herder_fixed
-msgid "List Header Fixed"
-msgstr "列表标题固定"
 
 #. module: eist_web_theme
 #. odoo-javascript
@@ -684,6 +693,14 @@ msgid "Main"
 msgstr "主要"
 
 #. module: eist_web_theme
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Mauve"
+msgstr "淡紫红色"
+
+#. module: eist_web_theme
 #: model:ir.model,name:eist_web_theme.model_ir_ui_menu
 msgid "Menu"
 msgstr "菜单"
@@ -730,6 +747,14 @@ msgid "Open action in tabs"
 msgstr "在标签页中打开动作"
 
 #. module: eist_web_theme
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Orange"
+msgstr "橙色"
+
+#. module: eist_web_theme
 #: model_terms:ir.ui.view,arch_db:eist_web_theme.login_layout
 msgid "Powered by %s"
 msgstr "由 %s 提供支持"
@@ -752,9 +777,12 @@ msgid "Primary Color"
 msgstr "主要颜色"
 
 #. module: eist_web_theme
-#: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__theme_color__purple
-msgid "Purple"
-msgstr "紫色"
+#. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Red"
+msgstr "红色"
 
 #. module: eist_web_theme
 #: model:ir.model.fields.selection,name:eist_web_theme.selection__res_theme__form_chatter_position__1
@@ -1036,6 +1064,14 @@ msgstr "选中后，徽标将显示在登录页面上。否则，不会显示它
 
 #. module: eist_web_theme
 #. odoo-javascript
+#. odoo-python
+#: code:addons/eist_web_theme/models/ir_http.py:0
+#: code:addons/eist_web_theme/static/src/core/theme_colorlist/theme_colorlist.js:0
+msgid "Yellow"
+msgstr "黄色"
+
+#. module: eist_web_theme
+#. odoo-javascript
 #: code:addons/eist_web_theme/static/src/webclient/systray_items/theme_menu/theme_panel.xml:0
 msgid "You need to save the settings to make the new theme effective!"
 msgstr "您需要保存设置以使新主题生效！"
@@ -1043,7 +1079,7 @@ msgstr "您需要保存设置以使新主题生效！"
 #. module: eist_web_theme
 #. odoo-javascript
 #: code:addons/eist_web_theme/static/src/webclient/sidebar_menu/sidebar_menu.xml:0
-msgid "{{app.label or app.name}}"
+msgid "{{ app.name}}"
 msgstr ""
 
 #. module: eist_web_theme

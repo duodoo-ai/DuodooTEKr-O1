@@ -35,7 +35,7 @@ export class ThemePanel extends Component {
 		});
 
 		const theme = this.state.theme;
-		// console.log("主题状态", theme.views.list);
+
 		onPatched(() => {
 			// console.log("onPatched-----------theme", this.state.theme.main_submenu_position);
 			// console.log("onPatched-----------old_theme", old_theme.main_submenu_position);
@@ -117,6 +117,20 @@ export class ThemePanel extends Component {
 			context: {
 				theme: {
 					main_submenu_position: position.id.toString(),
+				},
+			},
+		})
+	}
+
+	//-------------------------
+	// 主题颜色
+	//-------------------------
+	onChangeDefaultThemeColor(color) {
+		this.state.theme.color.default = color.id;
+		this.orm.call("res.users", "set_user_theme", [this.user.userId], {
+			context: {
+				theme: {
+					theme_color: color.id,
 				},
 			},
 		})
@@ -212,26 +226,6 @@ export class ThemePanel extends Component {
 			},
 		})
 
-	}
-
-
-	// 视图-列表-头部固定
-	//-------------------------
-	onToggleListHerderFixed(state) {
-		this.state.theme.views.list.herder_fixed = !state;
-		// this.orm.call("res.users", "set_user_theme", [
-		// 	session.uid,
-		// 	{
-		// 		list_herder_fixed: !state,
-		// 	},
-		// ]);
-		this.orm.call("res.users", "set_user_theme", [this.user.userId], {
-			context: {
-				theme: {
-					list_herder_fixed: !state,
-				},
-			},
-		})
 	}
 
 	// 视图-列表-列表单页显示数量限制

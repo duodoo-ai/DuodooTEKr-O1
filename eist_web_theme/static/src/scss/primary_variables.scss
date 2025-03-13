@@ -3,6 +3,21 @@
 /// They are available in every asset bundle.
 ///
 
+// 主题颜色
+// https://tailwindcss.com/docs/colors#using-custom-colors
+$o-theme-colors:
+    // #F9FAFD,   // 0.浅色
+    #fb2c36,    // 1.红色
+    #ff6900,    // 2.橙色
+    #f0b100,    // 3.黄色
+    #00c950,    // 4.绿色
+    #2b7fff,    // 5.蓝色
+    #615fff,    // 6.靛色
+    #71639e,    // 7.紫色,社区版颜色
+    #714B67,    // 8.深紫色，企业版颜色
+    #6a7282     // 9.灰色
+     !default;
+
 // Colors
 $o-white: #FFF !default;
 $o-black: #000 !default;

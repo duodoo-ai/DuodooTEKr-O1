@@ -1,5 +1,6 @@
 /** @odoo-module **/
 
+import { sprintf } from "@web/core/utils/strings";
 import { WebClient } from "@web/webclient/webclient";
 import { useService } from "@web/core/utils/hooks";
 import { router, routerBus } from "@web/core/browser/router";
@@ -7,7 +8,7 @@ import { session } from "@web/session";
 import { EistErpNavBar } from "./navbar/navbar";
 import { EistErpSidebarMenu } from "./sidebar_menu/sidebar_menu";
 
-import { Component, onMounted, onPatched,onWillStart, useExternalListener, useState } from "@odoo/owl";
+import { Component, onMounted, onPatched, onWillStart, useExternalListener, useState } from "@odoo/owl";
 import { browser } from "@web/core/browser/browser";
 
 export class WebClientEistErp extends WebClient {
@@ -24,6 +25,7 @@ export class WebClientEistErp extends WebClient {
 
 		this.dm = useService("drawer_menu");
 		this.title = useService("title");
+		this.actionService = useService("action");
 
 
 		// const currentMenuId = Number(this.router.current.hash.menu_id || 0);
@@ -38,22 +40,23 @@ export class WebClientEistErp extends WebClient {
 
 		// 设置品牌
 		let system_name = session.brand.system_name;
-		const current_cid = session.user_companies.current_company; //当前公司id
+		var current_company_name;
 		const display_company_name = session.brand.display_company_name;
 		if (display_company_name) {
 			let allowed_companies = session.user_companies.allowed_companies; // 允许访问的公司
-			let current_company_name = getCurrentCompanyName(); //当前公司名称
-
+			let current_company_id = session.user_companies.current_company; // 当前公司ID
+			current_company_name = getCurrentCompanyName(); //当前公司名称
 			function getCurrentCompanyName() {
 				for (var key in allowed_companies) {
 					let company = allowed_companies[key];
-					if (company.id === current_cid) {
+					if (company.id === current_company_id) {
 						return company.name;
 					}
 				}
 			}
-
 			system_name = sprintf("%s - %s", current_company_name, system_name);
+			// console.log(this.actionService.currentController )
+			// this.title.setParts({ one: current_company_name, two: system_name, three: this.actionService.currentController }); //设置标题
 		}
 		this.title.setParts({ zopenerp: system_name }); //设置标题
 
@@ -62,6 +65,9 @@ export class WebClientEistErp extends WebClient {
 		this.state.theme.sidebarMinimize = false;
 		if (this.state.theme.default_minimized) {
 			this.state.theme.sidebarMinimize = true;
+		}
+		if (this.state.theme.color.default !== 0) {
+
 		}
 
 		onMounted(() => {
@@ -76,6 +82,10 @@ export class WebClientEistErp extends WebClient {
 	}
 
 	set_body_data() {
+		this.el.setAttribute(
+			"data-theme-color",
+			this.state.theme.color.default
+		); // 主题颜色
 		this.el.setAttribute(
 			"data-app-load-method",
 			this.state.theme.main.app_load_method.default

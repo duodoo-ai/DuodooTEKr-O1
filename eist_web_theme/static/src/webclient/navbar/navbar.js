@@ -1,5 +1,6 @@
 /** @odoo-module **/
 
+import { session } from "@web/session";
 import { NavBar } from "@web/webclient/navbar/navbar";
 import { useService, useBus } from "@web/core/utils/hooks";
 import { _t } from "@web/core/l10n/translation";
@@ -14,7 +15,14 @@ export class EistErpNavBar extends NavBar {
 		this.pwa = useService("pwa");
 		this.menuAppsRef = useRef("menuApps");
 		this.navRef = useRef("nav");
-		this._busToggledCallback = () => this._updateMenuAppsIcon();
+
+		this.state = useState({
+			...this.state,
+			theme: session["theme"],
+		});
+
+
+		this._busToggledCallback = () => this._updateMenuAppsIcon()
 		useBus(this.env.bus, "DRAWER-MENU:TOGGLED", this._busToggledCallback);
 		useEffect(() => this._updateMenuAppsIcon());
 	}

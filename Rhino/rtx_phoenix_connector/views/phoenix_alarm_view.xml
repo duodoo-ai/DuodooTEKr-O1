@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="phoenix_alarm_pool_tree">
+        <field name="name">rtx.phoenix.alarm.pool.tree</field>
+        <field name="model">rtx.phoenix.alarm.pool</field>
+        <field name="arch" type="xml">
+            <list string="异常清单" delete="0" create="0" edit="0" default_order="id desc">
+                <field name="name" optional="show"/>
+                <field name="monitor_time" string="监测时间" optional="show"/>
+                <field name='monitor_value' optional="show"/>
+                <field name='async_time' optional="show"/>
+                <field name="company_id" optional="hide"/>
+                <field name="complete_path" optional="show"/>
+                <field name="id" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="phoenix_alarm_pool_search" model="ir.ui.view">
+        <field name="name">rtx.phoenix.alarm.pool.search</field>
+        <field name="model">rtx.phoenix.alarm.pool</field>
+        <field name="arch" type="xml">
+            <search string="异常清单">
+                <filter name="act_true" string="未告警" domain="[('active','=',True)]"/>
+                <filter name="act_false" string="已告警" domain="[('active','=',False)]"/>
+                <filter name="act_all" string="全部" domain="['|',('active','=',True),('active','=',False)]"/>
+                <separator/>
+                <filter string="今日数据" name="today" domain="[('monitor_time','=', current_date)]"/>
+                <filter string="本月数据" name="month" domain="[('monitor_time','&gt;=', time.strftime('%Y-%m-01')),('monitor_time','&lt;',  (context_today() + relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="上月数据" name="month2" domain="[('monitor_time','&lt;', time.strftime('%Y-%m-01')),('monitor_time','&gt;=',  (context_today() - relativedelta(months=1)).strftime('%Y-%m-01') ) ]"/>
+                <filter string="本年数据" name="year" domain="[('monitor_time','&lt;=', time.strftime('%Y-12-31')),('monitor_time','&gt;=', time.strftime('%Y-01-01'))]"/>
+                <field name="monitor_time" string="告警时间"/>
+                <separator/>
+                <field name="name"/>
+                <separator/>
+                <group expand="0" string="分组">
+                    <filter string="测点" name="group_name" context="{'group_by':'name'}"/>
+                    <filter string="监测时间" name="group_monitor_time" context="{'group_by':'monitor_time'}"/>
+                    <filter string="告警时间" name="group_async_time" context="{'group_by':'async_time'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    
+    <record id="action_phoenix_alarm_pool" model="ir.actions.act_window">
+        <field name="name">异常清单</field>
+        <field name="res_model">rtx.phoenix.alarm.pool</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="phoenix_alarm_pool_search"/>
+        <field name="view_ids"
+           eval="[(5, 0, 0),
+                  (0, 0, {'view_mode': 'list', 'view_id': ref('phoenix_alarm_pool_tree')}),
+                  ]"/>
+    </record>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_equipment_barcode_scan,access.equipment_barcode_scan,model_equipment_barcode_scan,,1,1,1,1
+access_maintenance_inspection_record,access.maintenance_inspection_record,model_maintenance_inspection_record,,1,1,1,1
+

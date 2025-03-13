@@ -77,21 +77,23 @@ class ResTheme(models.Model):
 
     # 5.Theme color
     # ------------------------------------------------------------
-    theme_color = fields.Selection(
+    theme_color = fields.Integer(
         string="Theme color",
-        selection=[
-            ("default", "Light Blue"),
-            ("darkblue", "Dark Blue"),
-            ("purple", "Purple"),
-            ("deep_purple", "Deep purple"),
-            ("grey", "Grey"),
-            ("light", "Light"),
-            ("light2", "Light2"),
-        ],
-        default="default",
+        # selection=[
+        #     ("red", "Red"),             # 1.红色
+        #     ("orange", "Orange"),       # 2.橙色
+        #     ("yellow", "Yellow"),       # 3.黄色
+        #     ("deep_purple", "Green"),   # 4.绿色
+        #     ("blue", "Blue"),           # 5.蓝色
+        #     ("indigo", "Indigo"),       # 6.靛蓝色
+        #     ("purple", "Purple"),       # 7.紫色
+        #     ("grey", "Grey"),           # 8.灰色
+        #     ("light", "Light"),         # 9.浅色
+        # ],
+        default=0,
         required=True,
         readonly=False,
-    )
+    ) # Red, orange, yellow, green, blue, indigo, purple.
 
     # 6.Sidebar menu
     # ------------------------------------------------------------
@@ -110,10 +112,11 @@ class ResTheme(models.Model):
     display_scroll_top_button = fields.Boolean(
         string="Display Scroll Top Button", default=True
     )
-    list_herder_fixed = fields.Boolean(string="List Header Fixed", default=False)
+    # list_herder_fixed = fields.Boolean(string="List Header Fixed", default=False)
     list_rows_limit = fields.Selection(
         string="Number of rows in the list",
         selection=[
+            ("40", "40 rows"),
             ("80", "80 rows"),
             ("100", "100 rows"),
             ("120", "120 rows"),

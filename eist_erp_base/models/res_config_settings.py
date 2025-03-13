@@ -22,6 +22,9 @@ class ResConfigSettings(models.TransientModel):
     # 解决方案
     module_eist_pos = fields.Boolean(string="Solutions for stores and restaurants", default=False)
 
+    # 扩展功能
+    module_esit_geolocalize = fields.Boolean(string="Partners Geolocation", default=False)
+
 
     @api.onchange("hide_enterprise_app")
     def _onchange_hide_enterprise_app(self):

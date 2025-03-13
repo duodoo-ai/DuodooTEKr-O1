@@ -1,0 +1,7 @@
+<!-- 响应式适配 -->
+<style>
+    @media (max-width: 768px) {
+        .oe_title { flex-direction: column; }
+        .oe_avatar { margin-top: 10px; }
+    }
+</style>

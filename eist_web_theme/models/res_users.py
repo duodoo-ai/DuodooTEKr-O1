@@ -14,6 +14,7 @@ class ResUsers(models.Model):
         "res.theme", string="Theme", store=True, domain="[('user_id', '=', id)]"
     )
 
+    @api.model_create_multi
     def create(self, vals_list):
         """
         创建新用户时，创建主题

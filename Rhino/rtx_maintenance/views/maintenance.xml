@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_equipment_form_view_2" model="ir.ui.view">
+            <field name="name">maintenance.equipment.form.inherit</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <field name="complete_path" readonly="1"/>
+                    <field name="parent_id"/>
+                    <field name="barcode"/>
+                    <field name="qr_code" widget="image"/>
+                </field>
+<!--                <field name="serial_no" position="after">-->
+<!--                    <field name="barcode"/>-->
+<!--                    <field name="qr_code" widget="image"/>-->
+<!--                </field>-->
+                <xpath expr="//sheet" position="before">
+                    <button name="scan_barcode" string="扫码巡检" type="object" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_equipment_list_view_inherit_2" model="ir.ui.view">
+            <field name="name">maintenance.equipment.list.inherit</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
+            <field name="arch" type="xml">
+		    	<xpath expr="//field[@name='name']" position="before">
+		    		<field name="complete_path" optional="show"/>
+	            </xpath>
+                <xpath expr="//field[@name='serial_no']" position="after">
+		    		<field name="barcode" optional="show"/>
+	            </xpath>
+            </field>
+        </record>
+
+        <record id="view_equipment_request_list_view_2" model="ir.ui.view">
+            <field name="name">maintenance.request.list.inherit</field>
+            <field name="model">maintenance.request</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_request_view_tree"/>
+            <field name="arch" type="xml">
+		    	<xpath expr="//field[@name='name']" position="after">
+		    		<field name="maintenance_type"/>
+	            </xpath>
+            </field>
+        </record>
+
+        <record id="view_equipment_search_view_inherit_2" model="ir.ui.view">
+            <field name="name">equipment.search</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/group" position="after">
+                    <!--增加设备视图左侧树状菜单-->
+                    <searchpanel>
+                        <field name="company_id" expand="1" groups="base.group_multi_company" icon="fa-building" enable_counters="1"/>
+                        <field name="parent_id" hierarchize="1" select="one" limit="2000" expand="1" icon="fa-users" enable_counters="1"/>
+                        <field name="category_id" hierarchize="1" select="one" limit="2000" expand="1" icon="fa-users" enable_counters="1"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- 维护请求: 纠正性维护 -->
+        <record id="hr_equipment_request_corrective_action" model="ir.actions.act_window">
+            <field name="name">纠正性维护</field>
+            <field name="res_model">maintenance.request</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('maintenance_type', '=', 'corrective')]</field>
+            <field name="context">{
+                'search_default_active': True,
+                'default_user_id': uid
+            }</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    添加新的维护请求
+                </p><p>
+                    遵循请求流程并与合作者沟通。
+                </p>
+            </field>
+        </record>
+
+        <!-- 维护请求: 预防性维护 -->
+        <record id="hr_equipment_request_preventive_action" model="ir.actions.act_window">
+            <field name="name">预防性维护</field>
+            <field name="res_model">maintenance.request</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('maintenance_type', '=', 'preventive')]</field>
+            <field name="context">{
+                'search_default_active': True,
+                'default_user_id': uid
+            }</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    添加新的维护请求
+                </p><p>
+                    遵循请求流程并与合作者沟通。
+                </p>
+            </field>
+        </record>
+
+        <!-- 设备条码扫描表单视图 -->
+        <record id="view_equipment_barcode_scan_form" model="ir.ui.view">
+            <field name="name">equipment.barcode.scan.form</field>
+            <field name="model">equipment.barcode.scan</field>
+            <field name="arch" type="xml">
+                <form string="设备条码扫描">
+                    <header>
+                        <button string="取消" special="cancel" class="btn-secondary"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="equipment_id"/>
+                            <field name="scanned_barcode"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+<!-- 设备巡检点检记录列表视图 -->
+        <record id="view_equipment_barcode_scan_list" model="ir.ui.view">
+            <field name="name">equipment.barcode.scan.list</field>
+            <field name="model">equipment.barcode.scan</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="equipment_id" readonly="1"/>
+                            <field name="scanned_barcode"/>
+                </list>
+            </field>
+        </record>
+        <!-- 设备巡检点检记录动作视图 -->
+        <record id="action_view_equipment_barcode_scan" model="ir.actions.act_window">
+            <field name="name">设备条码扫描</field>
+            <field name="res_model">equipment.barcode.scan</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+
+
+        <!-- 设备巡检点检记录列表视图 -->
+        <record id="view_maintenance_inspection_record_list" model="ir.ui.view">
+            <field name="name">maintenance.inspection.record.list</field>
+            <field name="model">maintenance.inspection.record</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="equipment_id"/>
+                    <field name="barcode"/>
+                    <field name="inspection_date"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- 设备巡检点检记录表单视图 -->
+        <record id="view_maintenance_inspection_record_form" model="ir.ui.view">
+            <field name="name">maintenance.inspection.record.form</field>
+            <field name="model">maintenance.inspection.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="equipment_id"/>
+                            <field name="barcode"/>
+                            <field name="inspection_date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- 设备巡检点检记录动作视图 -->
+        <record id="action_maintenance_inspection_record" model="ir.actions.act_window">
+            <field name="name">设备巡检点检记录</field>
+            <field name="res_model">maintenance.inspection.record</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+
+    </data>
+</odoo>

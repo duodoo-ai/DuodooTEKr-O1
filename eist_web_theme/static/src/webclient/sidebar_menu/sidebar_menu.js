@@ -76,7 +76,7 @@ export class EistErpSidebarMenu extends Component {
 		this.state = useState({
 			theme: session["theme"],
 		});
-		
+
 		if (this.currentAction) {
 			this.getCurrentMenuItem(this.currentAction);
 		}
@@ -95,8 +95,8 @@ export class EistErpSidebarMenu extends Component {
 		onMounted(() => {
 			this.onMounted();
 		});
-		onPatched(() => {});
-		onWillUpdateProps(() => {});
+		onPatched(() => { });
+		onWillUpdateProps(() => { });
 	}
 
 	onMounted() {
@@ -147,8 +147,8 @@ export class EistErpSidebarMenu extends Component {
 	}
 
 	/*
-    允许加载子菜单
-    */
+	允许加载子菜单
+	*/
 	allowLoadAppSubMenus() {
 		if (
 			this.state.theme.sidebar_default_minimized &&
@@ -337,8 +337,11 @@ export class EistErpSidebarMenu extends Component {
 			const appCollapseEl = this.el.querySelector(
 				"#menu-collapse-" + this.state.currentAppId
 			);
-			appCollapseEl.classList.remove("collapse");
-			appCollapseEl.classList.add("show");
+			console.log(appCollapseEl)
+			if (appCollapseEl) {
+				appCollapseEl.classList.remove("collapse");
+				appCollapseEl.classList.add("show");
+			}
 
 			const menuPaths = this.getParentMenuPath(this.state.currentMenuId);
 			// 展开子菜单
@@ -420,8 +423,10 @@ export class EistErpSidebarMenu extends Component {
 			const appCollapseEl = this.el.querySelector(
 				"#menu-collapse-" + this.state.currentAppId
 			);
-			appCollapseEl.classList.remove("collapse");
-			appCollapseEl.classList.add("show");
+			if (appCollapseEl) {
+				appCollapseEl.classList.remove("collapse");
+				appCollapseEl.classList.add("show");
+			}
 
 			const menuPaths = this.getParentMenuPath(this.state.currentMenuId);
 			// 展开子菜单

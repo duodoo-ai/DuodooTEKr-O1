@@ -27,6 +27,12 @@
         "web.assets_backend": [
             "eist_erp_base/static/libs/bootstrap-icons/font/bootstrap-icons.min.css",
             "eist_erp_base/static/src/webclient/**/*",
+            # "https://pyscript.net/latest/pyscript.css",
+            # "https://pyscript.net/latest/pyscript.js",
+        ],
+        "web.assets_frontend": [
+            # "https://pyscript.net/latest/pyscript.css",
+            # "https://pyscript.net/latest/pyscript.js",
         ],
     },
     "license": "Other proprietary",

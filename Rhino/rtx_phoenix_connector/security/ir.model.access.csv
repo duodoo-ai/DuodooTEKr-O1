@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rtx_phoenix_token,access.rtx_phoenix_token,model_rtx_phoenix_token,,1,1,1,1
+access_rtx_phoenix_configurator,access.rtx_phoenix_configurator,model_rtx_phoenix_configurator,,1,1,1,1
+access_rtx_phoenix_dynamic_measurements_user,access.rtx_phoenix_dynamic_measurements_user,model_rtx_phoenix_dynamic_measurements,,1,0,0,0
+access_rtx_phoenix_alarm_pool_user,access.rtx_phoenix_alarm_pool_user,model_rtx_phoenix_alarm_pool,,1,0,0,0

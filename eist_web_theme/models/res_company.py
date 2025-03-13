@@ -68,7 +68,7 @@ class ResCompany(models.Model):
 
     # 3.Theme color
     # ------------------------------------------------------------
-    theme_color = fields.Selection(related="theme_id.theme_color", readonly=False)
+    theme_color = fields.Integer(related="theme_id.theme_color", readonly=False)
 
     # 4.Sidebar menu
     # ------------------------------------------------------------
@@ -91,9 +91,9 @@ class ResCompany(models.Model):
     display_scroll_top_button = fields.Boolean(
         related="theme_id.display_scroll_top_button", readonly=False
     )
-    list_herder_fixed = fields.Boolean(
-        related="theme_id.list_herder_fixed", readonly=False
-    )
+    # list_herder_fixed = fields.Boolean(
+    #     related="theme_id.list_herder_fixed", readonly=False
+    # )
     list_rows_limit = fields.Selection(
         related="theme_id.list_rows_limit", readonly=False
     )
@@ -149,6 +149,8 @@ class ResCompany(models.Model):
     # ------------------------------------------------------------
     # 版权的文本内容 ， 文档 / 技术支持 的URL
     # ------------------------------------------------------------
+
+    @api.model_create_multi
     def create(self, vals_list):
         # add default favicon
         for vals in vals_list:
@@ -159,6 +161,7 @@ class ResCompany(models.Model):
         companies = super().create(vals_list)
         return companies
 
+    @api.model_create_multi
     def create(self, vals_list):
         """
         创建新公司时，创建主题 和 用户菜单项目

@@ -48,7 +48,7 @@
                         <div class="tab-pane fade show active" id="v-pills-main" role="tabpanel" aria-labelledby="v-pills-main-tab" tabindex="0">
                             <h2>Main</h2>
 
-                            <!-- 使用抽屉菜单 -->
+                            <!-- 应用加载方式 -->
                             <div class="theme-option" t-if="state.theme.main_submenu_position!==1">
                                 <span class="float-start">Application loading method</span>
                                 <ul class="list-group w-100">
@@ -60,7 +60,7 @@
                                             <i t-attf-class="bi {{method.icon}} {{method.id==state.theme.main.app_load_method.default ? 'text-success':''}}" style="font-size: 3rem; " />
                                         </div>
                                         <div class="form-check form-control-lg">
-                                            <input class="form-check-input" type="radio" name="radio_layout_app_load_method" t-attf-id="radio_layout_app_load_method_{{method.id}}" t-att-value="method.id" t-att-checked="method.id==state.theme.main.app_load_method.default" t-on-change="() => this.onChangeAppLoadMethod(method)"/>
+                                            <input class="form-check-input" type="radio" name="radio_layout_app_load_method" t-attf-id="radio_layout_app_load_method_{{method.id}}" t-att-value="method.id" t-att-checked="method.id==state.theme.main.app_load_method.default" t-on-change="() => this.onChangeAppLoadMethod(method)" t-att-disabled="method.id=='2'"/>
                                         </div>
                                     </li>
                                 </ul>
@@ -101,11 +101,21 @@
                             </div>
                         </div>
 
-
                         <div class="tab-pane fade" id="v-pills-color" role="tabpanel" aria-labelledby="v-pills-color-tab" tabindex="0">
                             <h2>Theme Color</h2>
                             <h4>Primary Color</h4>
-
+                            <div class="theme-option">
+                                <ul class="list-group list-group-horizontal row theme-colors g-1 m-1">
+                                    <t t-foreach="state.theme.color.colors" t-as="color" t-key="color_index">
+                                        <t t-set="isDefault" t-value="color.id===state.theme.color.default"/>
+                                        <li t-attf-class="list-group-item theme-color p-0 d-flex justify-content-center align-items-center o_theme_colorlist_item_color_{{color.id}} {{color.id===state.theme.color.default ? 'current':''}}" t-att-title="color.name" t-on-click.stop.prevent="() => this.onChangeDefaultThemeColor(color)">
+                                            <t t-if="color.id===state.theme.color.default">
+                                                <i class="bi bi-check-lg fa-lg text-white" />
+                                            </t>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="tab-pane fade" id="v-pills-sidebar" role="tabpanel" aria-labelledby="v-pills-sidebar-tab" tabindex="0">
@@ -150,13 +160,6 @@
                             </div>
 
                             <h4>List</h4>
-
-                            <div class="theme-option">
-                                <span class="float-start">List Header Fixed</span>
-                                <div class="form-check form-switch form-control-lg" t-on-click.stop.prevent="() => this.onToggleListHerderFixed(state.theme.views.list.herder_fixed)">
-                                    <input class="form-check-input" type="checkbox" role="switch" t-att-checked="state.theme.views.list.herder_fixed" />
-                                </div>
-                            </div>
 
                             <div class="theme-option">
                                 <div class="row w-100 mb8 d-flex justify-content-center gx-0">

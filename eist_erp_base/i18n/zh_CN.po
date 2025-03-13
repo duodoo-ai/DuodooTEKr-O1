@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-15 15:46+0000\n"
-"PO-Revision-Date: 2024-12-15 23:48+0800\n"
+"POT-Creation-Date: 2025-03-11 15:03+0000\n"
+"PO-Revision-Date: 2025-03-11 23:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -29,9 +29,27 @@ msgid "Applications"
 msgstr "应用"
 
 #. module: eist_erp_base
+#. odoo-javascript
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/general_config_navigation/general_config_navigation.xml:0
+#: model:ir.model,name:eist_erp_base.model_res_company
+msgid "Companies"
+msgstr "公司"
+
+#. module: eist_erp_base
 #: model:ir.model,name:eist_erp_base.model_res_config_settings
 msgid "Config Settings"
-msgstr "配置设置"
+msgstr "配置设定"
+
+#. module: eist_erp_base
+#: model:ir.model,name:eist_erp_base.model_res_partner
+msgid "Contact"
+msgstr "联系人"
+
+#. module: eist_erp_base
+#. odoo-javascript
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/general_config_navigation/general_config_navigation.xml:0
+msgid "EMail"
+msgstr "电子邮件"
 
 #. module: eist_erp_base
 #: model:ir.actions.act_window,name:eist_erp_base.erp_configurator
@@ -45,9 +63,22 @@ msgid "ERP Settings"
 msgstr "ERP设置"
 
 #. module: eist_erp_base
+#: model:ir.model.fields,field_description:eist_erp_base.field_res_company__fax
+#: model:ir.model.fields,field_description:eist_erp_base.field_res_partner__fax
+#: model:ir.model.fields,field_description:eist_erp_base.field_res_users__fax
+msgid "Fax"
+msgstr "传真"
+
+#. module: eist_erp_base
 #: model:ir.model.fields,field_description:eist_erp_base.field_res_config_settings__hide_enterprise_app
 msgid "Hide Enterprise App"
 msgstr "隐藏企业版应用"
+
+#. module: eist_erp_base
+#. odoo-javascript
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/general_config_navigation/general_config_navigation.xml:0
+msgid "Integrations"
+msgstr "集成"
 
 #. module: eist_erp_base
 #: model_terms:ir.ui.view,arch_db:eist_erp_base.res_config_settings_view_form
@@ -58,7 +89,14 @@ msgstr "提供报表统一管理和在线设计报表的功能。"
 
 #. module: eist_erp_base
 #. odoo-javascript
-#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/navigation/navigation.xml:0
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/general_config_navigation/general_config_navigation.xml:0
+msgid "Languages"
+msgstr "语言"
+
+#. module: eist_erp_base
+#. odoo-javascript
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/eist_config_navigation/eist_config_navigation.xml:0
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/general_config_navigation/general_config_navigation.xml:0
 msgid "Navigation"
 msgstr "导航"
 
@@ -66,6 +104,12 @@ msgstr "导航"
 #: model:ir.actions.client,name:eist_erp_base.action_open_erp_configurator
 msgid "Open ERP Configurator"
 msgstr "打开ERP配置器"
+
+#. module: eist_erp_base
+#. odoo-javascript
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/general_config_navigation/general_config_navigation.xml:0
+msgid "Permissions"
+msgstr "权限"
 
 #. module: eist_erp_base
 #: model_terms:ir.ui.view,arch_db:eist_erp_base.res_config_settings_view_form
@@ -104,6 +148,12 @@ msgid "User-friendly PoS interface for shops and restaurants."
 msgstr "面向商店和餐馆的用户友好 PoS 界面。"
 
 #. module: eist_erp_base
+#. odoo-javascript
+#: code:addons/eist_erp_base/static/src/webclient/settings_form_view/general_config_navigation/general_config_navigation.xml:0
+msgid "Users"
+msgstr "用户"
+
+#. module: eist_erp_base
 #: model:ir.model.fields,field_description:eist_erp_base.field_res_config_settings__module_eist_web_theme
 #: model_terms:ir.ui.view,arch_db:eist_erp_base.res_config_settings_view_form
 msgid "Web Theme"
@@ -112,9 +162,4 @@ msgstr "后端主题"
 #. module: eist_erp_base
 #: model:ir.model.fields,field_description:eist_erp_base.field_res_config_settings__module_eist_web_toolbox
 msgid "Web ToolBox"
-msgstr "Web 工具箱"
-
-#. module: eist_erp_base
-#: model_terms:ir.ui.view,arch_db:eist_erp_base.res_config_settings_view_form
-msgid "Web Toolbox"
 msgstr "Web 工具箱"

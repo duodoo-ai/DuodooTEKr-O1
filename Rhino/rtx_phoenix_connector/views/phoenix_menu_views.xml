@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <menuitem
+            id="phoenix_configurator_meu"
+            name="凤凰参数配置"
+            action='action_phoenix_configurator'
+            parent="rtx_maintenance.menu_maintenance_configuration_meu"
+            groups="maintenance.group_equipment_manager,base.group_user"
+            sequence="1990"/>
+        <menuitem
+            id="phoenix_token_meu"
+            name="凤凰接口配置"
+            action='action_phoenix_token'
+            parent="rtx_maintenance.menu_maintenance_configuration_meu"
+            groups="maintenance.group_equipment_manager"
+            sequence="2000"/>
+
+    <!--子模块，子菜单菜单-->
+    <menuitem
+        id="phoenix_dynamic_measurements_meu"
+        name="告警趋势分析"
+        action='action_phoenix_dynamic_measurements'
+        parent="rtx_maintenance.menu_phoenix_root"
+        groups="maintenance.group_equipment_manager,base.group_user"
+        sequence="1"/>
+        <!--子模块，设置子菜单-->
+        <menuitem
+        id="phoenix_alarm_pool_sub"
+        name="异常清单"
+        action='action_phoenix_alarm_pool'
+        parent="rtx_maintenance.menu_equipment_form_meu"
+        groups="maintenance.group_equipment_manager,base.group_user"
+        sequence="35"/>
+    <menuitem
+        id="menu_m_reports_meu"
+        name="设备运行分析"
+        parent="rtx_maintenance.menu_phoenix_root"
+        groups="maintenance.group_equipment_manager,base.group_user"
+        sequence="25"/>
+        <menuitem
+            id="menu_m_reports_oee_sub"
+            name="Overall Equipment Effectiveness (OEE)"
+            parent="menu_m_reports_meu"
+            groups="maintenance.group_equipment_manager,base.group_user"
+            sequence="1"/>
+        <menuitem
+            id="menu_m_reports_losses_sub"
+            name="Losses Analysis"
+            parent="menu_m_reports_meu"
+            groups="maintenance.group_equipment_manager,base.group_user"
+            sequence="2"/>
+</odoo>

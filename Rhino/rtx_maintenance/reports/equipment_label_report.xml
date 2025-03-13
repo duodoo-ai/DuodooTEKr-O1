@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="equipment_label_report_action" model="ir.actions.report">
+        <field name="name">Equipment Label Report</field>
+        <field name="model">equipment.barcode</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">rtx_maintenance.equipment_label_report</field>
+        <field name="report_file">rtx_maintenance.equipment_label_report</field>
+        <field name="binding_model_id" ref="model_equipment_barcode"/>
+        <field name="print_report_name">'Equipment Label Report - ' + object.name</field>
+    </record>
+</odoo>

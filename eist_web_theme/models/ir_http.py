@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
-
+import ast
 import json
-
-from odoo import models
+from odoo import models, _
 from odoo.http import request
 
 
@@ -32,20 +31,11 @@ class Http(models.AbstractModel):
         # -------------------------------------------------------
         # 品牌
         # -------------------------------------------------------
-        system_name = ICP.get_param("esit.system_name", default="EIST ERP")
-        display_company_name = ICP.get_param("esit.display_company_name", default=False)
-        if type(display_company_name) == str and display_company_name.lower() in [
-            "true",
-            "t",
-            "1",
-        ]:
-            display_company_name = True
-        elif type(display_company_name) == str and display_company_name.lower() in [
-            "false",
-            "f",
-            "0",
-        ]:
-            display_company_name = False
+        system_name = ICP.get_param("eist_erp.system_name", default="EIST ERP")
+        display_company_name = ICP.get_param("eist_erp.display_company_name", default=False)
+        
+        if type(display_company_name) == str:
+            display_company_name = bool(ast.literal_eval(display_company_name))
 
         session_info["brand"] = {
             "system_name": system_name,
@@ -77,9 +67,7 @@ class Http(models.AbstractModel):
         if warn_eist_erp:
             session_info["warning"] = warn_eist_erp
             session_info["expiration_date"] = ICP.get_param("database.expiration_date")
-            session_info["expiration_reason"] = ICP.get_param(
-                "database.expiration_reason"
-            )
+            session_info["expiration_reason"] = ICP.get_param("database.expiration_reason")
 
         # -------------------------------------------------------
         # 用户菜单项
@@ -112,16 +100,12 @@ class Http(models.AbstractModel):
         # -------------------------------------------------------
         # 主题
         # -------------------------------------------------------
-        disable_theme_customizer = (
-            current_user_company.theme_id.disable_theme_customizer
-        )
+        disable_theme_customizer = current_user_company.theme_id.disable_theme_customizer
 
         # 主题 1. Main
         # -------------------------------------------------------
         loading_method = dict(
-            self.env["res.theme"].fields_get("main_app_load_method")[
-                "main_app_load_method"
-            ]["selection"]
+            self.env["res.theme"].fields_get("main_app_load_method")["main_app_load_method"]["selection"]
         )
         loading_method_list = []
         for key, value in loading_method.items():
@@ -135,57 +119,38 @@ class Http(models.AbstractModel):
             loading_method_list.append(mode)
 
         main_submenu_position_dict = dict(
-            self.env["res.theme"].fields_get("main_submenu_position")[
-                "main_submenu_position"
-            ]["selection"]
+            self.env["res.theme"].fields_get("main_submenu_position")["main_submenu_position"]["selection"]
         )
         main_submenu_position_list = []
         for key, value in main_submenu_position_dict.items():
             mode = {"id": int(key), "name": value}
             if key == "1":
-                mode.update(
-                    {"icon": "/eist_web_theme/static/img/submenu/submenu-header.png"}
-                )
+                mode.update({"icon": "/eist_web_theme/static/img/submenu/submenu-header.png"})
             if key == "2":
-                mode.update(
-                    {"icon": "/eist_web_theme/static/img/submenu/submenu-sidebar.png"}
-                )
+                mode.update({"icon": "/eist_web_theme/static/img/submenu/submenu-sidebar.png"})
             if key == "3":
-                mode.update(
-                    {"icon": "/eist_web_theme/static/img/submenu/submenu-both.png"}
-                )
+                mode.update({"icon": "/eist_web_theme/static/img/submenu/submenu-both.png"})
             main_submenu_position_list.append(mode)
 
         # 主题 3. Theme color
         # -------------------------------------------------------
-        theme_color_dict = dict(
-            self.env["res.theme"].fields_get("theme_color")["theme_color"]["selection"]
-        )
-        theme_color_list = []
-        for key, value in theme_color_dict.items():
-            color = {"code": key, "name": value}
-            if key == "default":
-                color.update({"color": "#3975c6"})
-            if key == "darkblue":
-                color.update({"color": "#2b3643"})
-            if key == "purple":
-                color.update({"color": "#71639e"})
-            if key == "deep_purple":
-                color.update({"color": "#714B67"})
-            if key == "grey":
-                color.update({"color": "#697380"})
-            if key == "light":
-                color.update({"color": "#F9FAFD"})
-            if key == "light2":
-                color.update({"color": "#F1F1F1"})
-            theme_color_list.append(color)
+        theme_color_list = [
+            {"id": 0, "name": _("Light")},
+            {"id": 1, "name": _("Red")},
+            {"id": 2, "name": _("Orange")},
+            {"id": 3, "name": _("Yellow")},
+            {"id": 4, "name": _("Green")},
+            {"id": 5, "name": _("Blue")},
+            {"id": 6, "name": _("Indigo")},
+            {"id": 7, "name": _("Lavender")},
+            {"id": 8, "name": _("Mauve")},
+            {"id": 9, "name": _("Grey")},
+        ]
 
         # 主题 6. Views
         # -------------------------------------------------------
         views_form_chatter_position_dict = dict(
-            self.env["res.theme"].fields_get("form_chatter_position")[
-                "form_chatter_position"
-            ]["selection"]
+            self.env["res.theme"].fields_get("form_chatter_position")["form_chatter_position"]["selection"]
         )
         views_form_chatter_position_list = []
         for key, value in views_form_chatter_position_dict.items():
@@ -197,9 +162,7 @@ class Http(models.AbstractModel):
             views_form_chatter_position_list.append(mode)
 
         views_list_rows_limit_dict = dict(
-            self.env["res.theme"].fields_get("list_rows_limit")["list_rows_limit"][
-                "selection"
-            ]
+            self.env["res.theme"].fields_get("list_rows_limit")["list_rows_limit"]["selection"]
         )
         views_list_rows_limit_list = []
         for key, value in views_list_rows_limit_dict.items():
@@ -243,7 +206,7 @@ class Http(models.AbstractModel):
             "views": {
                 "display_scroll_top_button": theme_id.display_scroll_top_button,
                 "list": {
-                    "herder_fixed": theme_id.list_herder_fixed,
+                    # "herder_fixed": theme_id.list_herder_fixed,
                     "rows": {
                         "limit": int(theme_id.list_rows_limit),
                         "limits": views_list_rows_limit_list,
