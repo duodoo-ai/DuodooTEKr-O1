@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="maintenance_inherit_view_equipment_form_view" model="ir.ui.view">
+            <field name="name">maintenance.inherit.equipment.form</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <field name="complete_path" readonly="1"/>
+                    <field name="parent_id"/>
+                </field>
+                <field name="maintenance_team_id" position="before">
+                    <field name="project_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="maintenance_inherit_view_equipment_list_view" model="ir.ui.view">
+            <field name="name">maintenance.inherit.equipment.list</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
+            <field name="arch" type="xml">
+		    	<xpath expr="//field[@name='name']" position="before">
+		    		<field name="complete_path" optional="hide"/>
+                    <field name="project_id" optional="show"/>
+	            </xpath>
+            </field>
+        </record>
+
+        <record id="maintenance_inherit_view_equipment_search_view" model="ir.ui.view">
+            <field name="name">maintenance.inherit.equipment.search</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/group" position="after">
+                    <!--Add a tree menu on the left side of the device view-->
+                    <searchpanel>
+                        <field name="company_id" expand="1" groups="base.group_multi_company" icon="fa-building" enable_counters="1"/>
+                        <field name="project_id" hierarchize="1" select="one" limit="2000" expand="1" icon="fa-users" enable_counters="1"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

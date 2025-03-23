@@ -1,0 +1,108 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoo_maintenance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-23 02:39+0000\n"
+"PO-Revision-Date: 2025-03-23 02:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.maintenance_menu_config_activity_type_meu
+msgid "Activity Types"
+msgstr "活动类型"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__complete_path
+msgid "Complete Path"
+msgstr "完整名称"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_maintenance_configuration_meu
+msgid "Configuration"
+msgstr "配置"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_m_dashboard_sub
+msgid "Dashboard"
+msgstr "仪表板"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_equipment_form_meu
+#: model:ir.ui.menu,name:odoo_maintenance.menu_maintenance_root
+msgid "Equipment"
+msgstr "设备"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_maintenance_cat
+msgid "Equipment Categories"
+msgstr "设备类型"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__parent_id
+msgid "Hierarchy"
+msgstr "目录树"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_m_reports_losses_sub
+msgid "Losses Analysis"
+msgstr "损失分析"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_requests_form_meu
+msgid "Maintenance"
+msgstr "维护"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_m_request_calendar_sub
+msgid "Maintenance Calendar"
+msgstr "维护日程"
+
+#. module: odoo_maintenance
+#: model:ir.model,name:odoo_maintenance.model_maintenance_equipment
+msgid "Maintenance Equipment"
+msgstr "设备保养"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_m_request_form_sub
+msgid "Maintenance Requests"
+msgstr "维护安排"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_maintenance_stage_configuration
+msgid "Maintenance Stages"
+msgstr "维护阶段"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_maintenance_teams
+msgid "Maintenance Teams"
+msgstr "维护团队"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_m_reports_oee_sub
+msgid "Overall Equipment Effectiveness (OEE)"
+msgstr "整体设备效率（OEE）"
+
+#. module: odoo_maintenance
+#: model:ir.ui.menu,name:odoo_maintenance.menu_m_reports_meu
+msgid "Reporting"
+msgstr "报表"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__child_ids
+msgid "Sub Hierarchy"
+msgstr "下级目录"
+
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__project_id
+msgid "Project"
+msgstr "项目"
