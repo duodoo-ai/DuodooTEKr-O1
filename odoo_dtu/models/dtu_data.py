@@ -13,21 +13,21 @@ class DtuData(models.Model):
     name = fields.Char(string="Name", required=True, index="trigram")
     imei = fields.Char(string='IMEI')  # 序列号(IMEI)，设备唯一标识码
     time = fields.Datetime(string='Upload time')  # 上传时间
-    Model = fields.Char(string='Model')  # 型号
-    Version = fields.Char(string='Version')  # 版本
-    Running_time = fields.Char(string='Running time')  # 运行时间
-    Remaining_memory = fields.Char(string='Remaining memory')  # 剩余内存
-    Signal_strength = fields.Char(string='Signal strength')  # 信号强度
-    Pressure = fields.Char(string='Pressure')  # 压力
-    Traffic = fields.Char(string='Traffic')  # 流量
-    Liquid_level = fields.Char(string='Liquid level')  # 液位
-    Temperature = fields.Char(string='Temperature')  # 温度
-    Atmospheric_pressure = fields.Char(string='Atmospheric pressure')  # 气压
-    Humidity = fields.Char(string='Humidity')  # 湿度
-    gps_Longitude = fields.Char(string='Gps Longitude', digits=(10, 7))  # GPS经度
-    gps_Latitude = fields.Char(string='Gps Latitude', digits=(10, 7))  # GPS纬度
-    gsm_Longitude = fields.Float(string="Gsm Longitude", digits=(10, 7))  # GSM经度
-    gsm_Latitude = fields.Float(string="Gsm Latitude", digits=(10, 7))  # GSM纬度
+    model = fields.Char(string='Model')  # 型号
+    version = fields.Char(string='Version')  # 版本
+    running_time = fields.Char(string='Running time')  # 运行时间
+    remaining_memory = fields.Char(string='Remaining memory')  # 剩余内存
+    signal_strength = fields.Float(string='Signal strength', digits='Signal')  # 信号强度
+    pressure = fields.Float(string='Pressure', digits='Pressure')  # 压力
+    traffic = fields.Float(string='Traffic', digits='Traffic')  # 流量
+    liquid_level = fields.Float(string='Liquid level', digits='Liquid')  # 液位
+    temperature = fields.Float(string='Temperature', digits='Temperature')  # 温度
+    atmospheric_pressure = fields.Float(string='Atmospheric pressure', digits='Atmospheric')  # 气压
+    humidity = fields.Float(string='Humidity', digits='Humidity')  # 湿度
+    gps_longitude = fields.Float(string='Gps Longitude', digits='Gps')  # GPS经度
+    gps_latitude = fields.Float(string='Gps Latitude', digits='Gps')  # GPS纬度
+    gsm_longitude = fields.Float(string="Gsm Longitude", digits='Gsm')  # GSM经度
+    gsm_latitude = fields.Float(string="Gsm Latitude", digits='Gsm')  # GSM纬度
     company_id = fields.Many2one(
         'res.company',
         string='Company',
