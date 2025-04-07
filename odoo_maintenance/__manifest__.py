@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Odoo Extend Maintenance",
+    'name': "Odoo Extend Maintenance(RTX)",
 
     'summary': """
     Track equipment and maintenance requests
@@ -19,15 +19,32 @@
     'version': '1.0',
 
     'depends': ['base', 'mail', 'web', 'maintenance', 'project'],
-
+    'external_dependencies': {
+            'python': ['qrcode', 'PIL'],
+        },
     'data': [
+        'security/groups.xml',
+        'security/ir.model.access.csv',
+        'report/qrcode_report_templates.xml',  # 添加报告文件
+
+        'views/maintenance_spec_views.xml',    # 设备监控数据
+        'views/maintenance_spec_inherit_views.xml',    # 技术指标
+        'views/maintenance_monitor_data_views.xml',  # 监控指标字段扩展
+        # 'views/maintenance_inspection_views.xml',  # 设备巡检记录
         'views/maintenance.xml',
-        'views/maintenance_menu_views.xml',
+        'views/menu_views.xml',
         'views/menu_hide_views.xml',
     ],
-    'demo': [
-
-    ],
+    'assets': {
+        'web.assets_backend': [
+            'odoo_maintenance/static/src/js/qrcode_report.js',
+            'odoo_maintenance/static/src/css/qrcode_style.css',
+            'odoo_maintenance/static/src/js/instascan.min.js',
+            'odoo_maintenance/static/src/css/qr_scanner.css',
+            # 'odoo_maintenance/static/src/js/qr_scanner.js',
+            'odoo_maintenance/static/src/xml/qr_template.xml',
+        ],
+    },
     'installable': True,
     'application': True,
     'auto_install': False,

@@ -1,5 +1,5 @@
 {
-    'name': "Base Module",
+    'name': "Base Module(RTX)",
     'author': "Jason Zou",
     "website": "-",
     'summary': '隐藏内置技术复杂性，增加基本权限组',

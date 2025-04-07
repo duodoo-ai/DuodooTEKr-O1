@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Odoo DTU Extend",
+    'name': "Odoo DTU Extend(RTX)",
 
     'summary': """
         给Odoo与DTU平台连接，以完成数据从DTU网关采集数据到Odoo平台，支持多DTU接口数据采集

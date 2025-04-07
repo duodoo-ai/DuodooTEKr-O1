@@ -6,6 +6,42 @@
             <field name="model">maintenance.equipment</field>
             <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
             <field name="arch" type="xml">
+                 <xpath expr="//div[@name='button_box']" position="inside">
+                     <button name="action_print_qrcode"
+                                string="Print QR Code"
+                                type="object"
+                                class="btn-primary"
+                                icon="fa-qrcode"/>
+                     <button name="action_scan_qr"
+                            string="扫码巡检"
+                            type="object"
+                            class="btn-primary"
+                            icon="fa-qrcode"/>
+                </xpath>
+                <!-- 在按钮栏前添加二维码容器 -->
+                <xpath expr="//div[@name='button_box']" position="after">
+                    <div class="oe_qr_top_right" style="
+                        position: absolute;
+                        top: 60px;
+                        right: 20px;
+                        z-index: 1000;
+                        background: white;
+                        padding: 10px;
+                        border-radius: 2px;
+                        transform: translateY(-50%);
+                    ">
+                        <field name="qr_code"
+                               widget="image"
+                               class="oe_avatar"
+                               options="{
+                                   'preview_image': 'qr_code',
+                                   'size': [160, 160]
+                               }"/>
+                    </div>
+                </xpath>
+                <field name="category_id" position="before">
+                    <field name="barcode"/>
+                </field>
                 <field name="category_id" position="after">
                     <field name="complete_path" readonly="1"/>
                     <field name="parent_id"/>
@@ -13,6 +49,103 @@
                 <field name="maintenance_team_id" position="before">
                     <field name="project_id"/>
                 </field>
+                <xpath expr="//page[@name='maintenance']" position="after">
+                    <page string="技术指标" groups="odoo_maintenance.group_equipment_spec_admin">
+                        <field name="spec_ids" mode="list,form">
+                            <list>
+                                <field name="parameter_type"/>
+                                <field name="drive_type"/>
+                                <field name="rated_power"/>
+                                <field name="current_value"/>
+                                <field name="unit"/>
+                            </list>
+                            <form>
+                                <group>
+                                    <group string="基础信息">
+                                        <field name="parameter_type"/>
+                                        <field name="current_value"/>
+                                        <field name="unit"/>
+                                        <field name="effective_date"/>
+                                        <field name="revision"/>
+                                    </group>
+                                    <group string="驱动参数" invisible="parameter_type != 'drive'">
+                                        <field name="drive_type"/>
+                                        <field name="motor_power"/>
+                                        <field name="rated_speed"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="支撑参数" invisible="parameter_type != 'mechanical'">
+                                        <field name="bearing_type"/>
+                                        <field name="bearing_life"/>
+                                        <field name="lubrication_cycle"/>
+                                    </group>
+                                    <group string="电气参数" invisible="parameter_type != 'power'">
+                                        <field name="rated_power"/>
+                                        <field name="rated_voltage"/>
+                                        <field name="power_factor"/>
+                                    </group>
+                                </group>
+                                <field name="alert_rule_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="condition_type"/>
+                                        <field name="min_value"/>
+                                        <field name="max_value"/>
+                                        <field name="severity_level"/>
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <field name="name"/>
+                                            <field name="condition_type"/>
+                                            <field name="min_value" required="condition_type in ['min','range']"/>
+                                            <field name="max_value" required="condition_type in ['max','range']"/>
+                                        </group>
+                                        <group>
+                                            <field name="action_type"/>
+                                            <field name="severity_level"/>
+                                            <field name="notify_user_ids" widget="many2many_tags"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+                <!-- 添加巡检记录 -->
+                <xpath expr="//notebook" position="inside">
+                    <page string="巡检记录">
+                        <field name="inspection_ids" mode="list,form">
+                            <list>
+                                <field name="inspection_date"/>
+                                <field name="inspector_id"/>
+                                <field name="status"/>
+                                <field name="image" widget="image"/>
+                            </list>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="equipment_id" readonly="1"/>
+                                        <field name="inspection_date"/>
+                                        <field name="inspector_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="status"/>
+                                        <field name="image"/>
+                                    </group>
+                                </group>
+                                <field name="checklist_line_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="standard"/>
+                                        <field name="result"/>
+                                    </list>
+                                </field>
+                                <field name="remarks"/>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
             </field>
         </record>
 
