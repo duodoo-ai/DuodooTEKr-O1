@@ -14,6 +14,7 @@ _logger = logging.getLogger(__name__)
 class EquipmentMonitoringData(models.Model):
     _name = 'equipment.monitoring.data'
     _description = '位置指标数据'
+    _inherit = ['mail.thread']
     _order = 'timestamp desc'
     _sql_constraints = [
         ('gps_coordinate_check',
@@ -69,17 +70,20 @@ class EquipmentMonitoringData(models.Model):
     )
     pressure = fields.Float(
         '压力(kPa)',
-        digits=(8, 2)
+        digits=(8, 2),
+        tracking=True
     )
 
     # 流体监测
     flow_rate = fields.Float(
         '流量(m³/h)',
-        digits=(10, 2)
+        digits=(10, 2),
+        tracking=True
     )
     liquid_level = fields.Float(
         '液位(m)',
-        digits=(8, 3)
+        digits=(8, 3),
+        tracking=True
     )
 
     # 位置信息

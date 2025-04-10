@@ -20,6 +20,7 @@
                         <form>
                             <group>
                                 <group string="系统状态">
+                                    <field name="timestamp"/>
                                     <field name="firmware_version"/>
                                     <field name="memory_free"/>
                                     <field name="signal_strength"/>
@@ -44,13 +45,21 @@
                                 </group>
                             </group>
                             <group string="气象数据">
-                                <field name="wind_speed"/>
-                                <field name="wind_direction"/>
+                                <group>
+                                    <field name="wind_speed"/>
+                                </group>
+                                <group>
+                                    <field name="wind_direction"/>
+                                </group>
                             </group>
                             <group string="热力图">
-                                <field name="heatmap_data" widget="image"/>
-                                <field name="heatmap_scale"/>
-                                <button name="action_generate_heatmap" string="生成热力图" type="object" class="btn-primary"/>
+                                <group>
+                                    <field name="heatmap_scale"/>
+                                    <button name="action_generate_heatmap" string="生成热力图" type="object" class="btn-primary"/>
+                                </group>
+                                <group>
+                                    <field name="heatmap_data" widget="image"/>
+                                </group>
                             </group>
                         </form>
                     </field>
