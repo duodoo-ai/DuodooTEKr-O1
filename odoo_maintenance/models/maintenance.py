@@ -33,7 +33,22 @@ class MaintenanceEquipment(models.Model):
                 if s.parent_id in nodes:
                     raise UserError('The superior directory cannot select himself or his subordinate directory')
 
-    project_id = fields.Many2one('project.project', string='Project')  # 项目绑定
+    # 新增字段，管理设备的生命周期，从采购、安装、使用、维护到退役的各个阶段
+    purchase_date = fields.Date(string='Purchase Date')     # 采购日期
+    installation_date = fields.Date(string='Installation Date')     # 安装日期
+    first_use_date = fields.Date(string='First Use Date')     # 首次使用日期
+    last_maintenance_date = fields.Date(string='Last Maintenance Date')     # 最后维护日期
+    expected_retirement_date = fields.Date(string='Expected Retirement Date')     # 预计退役日期
+    lifecycle_state = fields.Selection([
+        ('purchasing', 'Purchasing'),
+        ('installing', 'Installing'),
+        ('in_use', 'In Use'),
+        ('maintenance', 'Maintenance'),
+        ('retired', 'Retired')
+    ], string='Lifecycle State', default='purchasing')     # 生命周期状态
+    equipment_state = fields.Selection(
+        [('normal', 'In Progress'), ('warn', 'In Warn'), ('alarm', 'To Alarm')],
+        string='Running State', required=True, default='normal', tracking=True) # 设备运行状态
 
     spec_ids = fields.One2many(
         'maintenance.equipment.spec',
@@ -170,7 +185,7 @@ class EquipmentInspection(models.Model):
         # 3. 从URL参数获取（支持外部系统集成）
         return False
 
-    inspection_date = fields.Datetime(default=fields.Datetime.now)
+    inspection_date = fields.Datetime(string='Inspection Date', default=fields.Datetime.now)
     operator_id = fields.Many2one('res.users', default=lambda self: self.env.user)
     status = fields.Selection([
         ('normal', '正常'),

@@ -67,35 +67,4 @@
             </xpath>
         </field>
     </record>
-
-    <!-- 看板视图 -->
-<!--    <record id="view_monitoring_kanban" model="ir.ui.view">-->
-<!--        <field name="name">equipment.monitoring.kanban</field>-->
-<!--        <field name="model">equipment.monitoring.data</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <kanban>-->
-<!--                <templates>-->
-<!--                    <t t-name="kanban-box">-->
-<!--                        <div class="oe_kanban_card">-->
-<!--                            <div class="o_kanban_card_content">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-6">-->
-<!--                                        <field name="timestamp"/>-->
-<!--                                        <field name="signal_strength"/>-->
-<!--                                    </div>-->
-<!--                                    <div class="col-6">-->
-<!--                                        <field name="temperature"/>-->
-<!--                                        <field name="battery_level"/>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="map-preview" t-if="record.heatmap_data.raw_value">-->
-<!--                                    <img t-att-src="'data:image/png;base64,' + record.heatmap_data.raw_value" class="img-fluid"/>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </t>-->
-<!--                </templates>-->
-<!--            </kanban>-->
-<!--        </field>-->
-<!--    </record>-->
 </odoo>
