@@ -156,22 +156,4 @@ class EquipmentMonitoringData(models.Model):
         # 示例算法
         return (self.signal_strength + 113) / 62  # 将-113~-51映射到0~1
 
-class MaintenanceEquipment(models.Model):
-    _inherit = 'maintenance.equipment'
-
-    monitoring_data_ids = fields.One2many(
-        'equipment.monitoring.data',
-        'equipment_id',
-        string='监控数据'
-    )
-    last_monitoring = fields.Datetime(
-        '最后上传时间',
-        compute='_compute_last_monitoring'
-    )
-
-    def _compute_last_monitoring(self):
-        for record in self:
-            last = self.env['equipment.monitoring.data'].search([
-                ('equipment_id', '=', record.id)
-            ], order='timestamp desc', limit=1)
-            record.last_monitoring = last.timestamp if last else False
+    

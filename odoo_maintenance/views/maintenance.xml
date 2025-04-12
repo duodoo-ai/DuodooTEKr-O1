@@ -215,6 +215,15 @@
                         </group>
                     </page>
                 </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Location indicator data">
+                        <span>Pressure(kPa) : <field name="latest_pressure" nolabel="1" class="oe_inline"/></span><br/>
+                        <span>Traffic(m³/h) : <field name="latest_flow_rate" nolabel="1" class="oe_inline"/></span><br/>
+                        <span>Liquid level(m) : <field name="latest_liquid_level" nolabel="1" class="oe_inline"/></span><br/>
+                        <span>Lat : <field name="latest_gsm_latitude" nolabel="1" class="oe_inline"/></span><br/>
+                        <span>Long: <field name="latest_gsm_longitude" nolabel="1" class="oe_inline"/></span>
+                    </page>
+                </xpath>
             </field>
         </record>
 

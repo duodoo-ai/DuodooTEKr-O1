@@ -62,7 +62,7 @@ class MaintenanceEquipment(models.Model):
 
     def _compute_active_alerts(self):
         for equip in self:
-            equip.active_alerts = self.env['alert.rule'].search_count([
+            equip.active_alerts = self.env['maintenance.alert.rule'].search_count([
                 ('spec_id.equipment_id', '=', equip.id),
                 ('active', '=', True)
             ])
@@ -148,6 +148,48 @@ class MaintenanceEquipment(models.Model):
     #         'context': {'qr_scan_mode': True}
     #     }
 
+    monitoring_data_ids = fields.One2many(
+        'equipment.monitoring.data',
+        'equipment_id',
+        string='Bind device'
+    )
+    last_monitoring = fields.Datetime(
+        '最后上传时间',
+        compute='_compute_last_monitoring'
+    )
+
+    def _compute_last_monitoring(self):
+        for record in self:
+            last = self.env['equipment.monitoring.data'].search([
+                ('equipment_id', '=', record.id)
+            ], order='write_date desc', limit=1)
+            record.last_monitoring = last.timestamp if last else False
+
+    latest_gsm_longitude = fields.Float(
+        'Gsm Longitude',
+        digits='Gsm'
+    )
+    latest_gsm_latitude = fields.Float(
+        'Gsm Latitude',
+        digits='Gsm'
+    )
+    latest_pressure = fields.Float(
+        'Pressure(kPa)',
+        digits='Pressure',
+        tracking=True
+    )
+    # 流体监测
+    latest_flow_rate = fields.Float(
+        'Traffic(m³/h)',
+        digits='Traffic',
+        tracking=True
+    )
+    latest_liquid_level = fields.Float(
+        'Liquid level(m)',
+        digits='Liquid',
+        tracking=True
+    )
+
 
 class EquipmentInspection(models.Model):
     _name = 'equipment.inspection'
@@ -228,12 +270,3 @@ class EquipmentInspection(models.Model):
                 'default_description': f'巡检发现问题：{self.notes}'
             }
         }
-
-
-# class MaintenanceCheck(models.Model):
-#     _name = 'maintenance.check'
-#     _description = 'Maintenance Check Record'
-#
-#     equipment_id = fields.Many2one('maintenance.equipment', string='Equipment', required=True)
-#     check_date = fields.Datetime(string='Check Date', default=fields.Datetime.now, required=True)
-#     notes = fields.Text(string='Notes')

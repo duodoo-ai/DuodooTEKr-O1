@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-12 01:07+0000\n"
-"PO-Revision-Date: 2025-04-12 01:07+0000\n"
+"POT-Creation-Date: 2025-04-12 01:50+0000\n"
+"PO-Revision-Date: 2025-04-12 01:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -171,11 +171,13 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__gsm_latitude
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_gsm_latitude
 msgid "GSM纬度"
 msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__gsm_longitude
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_gsm_longitude
 msgid "GSM经度"
 msgstr ""
 
@@ -304,6 +306,11 @@ msgstr "生命周期状态"
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
 msgid "Lifecycle information"
 msgstr "生命周期"
+
+#. module: odoo_maintenance
+#: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
+msgid "Location indicator data"
+msgstr "位置指标数据"
 
 #. module: odoo_maintenance
 #: model:ir.ui.menu,name:odoo_maintenance.menu_m_reports_losses_sub
@@ -686,6 +693,7 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__pressure
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_pressure
 msgid "压力(kPa)"
 msgstr ""
 
@@ -984,6 +992,7 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__flow_rate
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_flow_rate
 msgid "流量(m³/h)"
 msgstr ""
 
@@ -994,6 +1003,7 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__liquid_level
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_liquid_level
 msgid "液位(m)"
 msgstr ""
 
