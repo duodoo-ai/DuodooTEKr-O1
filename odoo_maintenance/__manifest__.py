@@ -23,10 +23,13 @@
             'python': ['qrcode', 'PIL'],
         },
     'data': [
+        'data/maintenance_data.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
         'report/qrcode_report_templates.xml',  # 添加报告文件
 
+        'views/maintenance_category_views.xml',
+        'views/maintenance_monitor_fluid_views.xml',  # 流体监控
         'views/maintenance_spec_views.xml',    # 设备监控数据
         'views/maintenance_spec_inherit_views.xml',    # 技术指标
         'views/maintenance_monitor_data_views.xml',  # 监控指标字段扩展

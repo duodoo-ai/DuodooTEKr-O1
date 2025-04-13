@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-12 01:50+0000\n"
-"PO-Revision-Date: 2025-04-12 01:50+0000\n"
+"POT-Creation-Date: 2025-04-13 02:43+0000\n"
+"PO-Revision-Date: 2025-04-13 02:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,11 @@ msgid "Action Needed"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment_category__active
+msgid "Active"
+msgstr "启用"
+
+#. module: odoo_maintenance
 #: model:ir.ui.menu,name:odoo_maintenance.maintenance_menu_config_activity_type_meu
 msgid "Activity Types"
 msgstr "活动类型"
@@ -45,6 +50,21 @@ msgid "Attachment Count"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__monitoring_data_ids
+msgid "Bind device"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_19
+msgid "CC-Link"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_request__maintenance_type__calibration
+msgid "Calibration"
+msgstr "校准任务"
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__complete_path
 msgid "Complete Path"
 msgstr "完整名称"
@@ -53,6 +73,11 @@ msgstr "完整名称"
 #: model:ir.ui.menu,name:odoo_maintenance.menu_maintenance_configuration_meu
 msgid "Configuration"
 msgstr "配置"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__control
+msgid "Control"
+msgstr "控制类"
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_inspection__create_uid
@@ -85,6 +110,11 @@ msgid "Display Name"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__electronic
+msgid "Electronic"
+msgstr "电子类"
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_inspection__equipment_id
 #: model:ir.ui.menu,name:odoo_maintenance.menu_equipment_form_meu
 msgid "Equipment"
@@ -114,6 +144,11 @@ msgstr "规格型号"
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.qr_template
 msgid "Equipment QR Code Report"
 msgstr ""
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment_category__technical_type
+msgid "Equipment Technical Category"
+msgstr "设备技术类型"
 
 #. module: odoo_maintenance
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
@@ -171,14 +206,22 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__gsm_latitude
-#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_gsm_latitude
 msgid "GSM纬度"
 msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__gsm_longitude
-#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_gsm_longitude
 msgid "GSM经度"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_gsm_latitude
+msgid "Gsm Latitude"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_gsm_longitude
+msgid "Gsm Longitude"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -236,9 +279,19 @@ msgid "In Warn"
 msgstr "警告"
 
 #. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_request__maintenance_type__inspection
+msgid "Inspection"
+msgstr "巡检任务"
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_inspection__inspection_date
 msgid "Inspection Date"
 msgstr "巡检日期"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_request__maintenance_type__installation
+msgid "Installation"
+msgstr "安装调试"
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__installation_date
@@ -284,6 +337,11 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
+msgid "Lat :"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
 msgid "Latest Failure"
 msgstr "最近一次故障"
 
@@ -308,14 +366,34 @@ msgid "Lifecycle information"
 msgstr "生命周期"
 
 #. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_liquid_level
+msgid "Liquid level(m)"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
+msgid "Liquid level(m) :"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
 msgid "Location indicator data"
 msgstr "位置指标数据"
 
 #. module: odoo_maintenance
+#: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
+msgid "Long:"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.ui.menu,name:odoo_maintenance.menu_m_reports_losses_sub
 msgid "Losses Analysis"
 msgstr "损失分析"
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_17
+msgid "MODBUS"
+msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.ui.menu,name:odoo_maintenance.menu_maintain_root
@@ -338,6 +416,16 @@ msgid "Maintenance Equipment"
 msgstr "设备保养"
 
 #. module: odoo_maintenance
+#: model:ir.model,name:odoo_maintenance.model_maintenance_equipment_category
+msgid "Maintenance Equipment Category"
+msgstr "维护设备类别"
+
+#. module: odoo_maintenance
+#: model:ir.model,name:odoo_maintenance.model_maintenance_request
+msgid "Maintenance Request"
+msgstr "保养请求"
+
+#. module: odoo_maintenance
 #: model:ir.ui.menu,name:odoo_maintenance.menu_m_request_form_sub
 msgid "Maintenance Requests"
 msgstr "维护安排"
@@ -351,6 +439,11 @@ msgstr "维护阶段"
 #: model:ir.ui.menu,name:odoo_maintenance.menu_maintenance_teams
 msgid "Maintenance Teams"
 msgstr "维护团队"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_request__maintenance_type
+msgid "Maintenance Type"
+msgstr "保养类型"
 
 #. module: odoo_maintenance
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
@@ -375,6 +468,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment_spec__message_ids
 msgid "Messages"
 msgstr ""
+
+#. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__motor
+msgid "Motor"
+msgstr "电机类"
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_inspection__message_needaction_counter
@@ -410,9 +508,34 @@ msgid "Operator"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__other
+msgid "Other"
+msgstr "其他类"
+
+#. module: odoo_maintenance
 #: model:ir.ui.menu,name:odoo_maintenance.menu_m_reports_oee_sub
 msgid "Overall Equipment Effectiveness (OEE)"
 msgstr "整体设备效率（OEE）"
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_01
+msgid "PLC"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_18
+msgid "PROFINET"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_pressure
+msgid "Pressure(kPa)"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
+msgid "Pressure(kPa) :"
+msgstr ""
 
 #. module: odoo_maintenance
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
@@ -423,6 +546,11 @@ msgstr "打印二维码"
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.qr_template
 msgid "Printed on:"
 msgstr "打印时间"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__protocol
+msgid "Protocol"
+msgstr "协议类"
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__purchase_date
@@ -466,11 +594,31 @@ msgid "RPM"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_21
+msgid "RS232"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_23
+msgid "RS422"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_22
+msgid "RS485"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_inspection__rating_ids
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__rating_ids
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment_spec__rating_ids
 msgid "Ratings"
 msgstr ""
+
+#. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__relay
+msgid "Relay"
+msgstr "继电类"
 
 #. module: odoo_maintenance
 #: model:ir.ui.menu,name:odoo_maintenance.menu_m_reports_meu
@@ -495,6 +643,16 @@ msgid "SMS Delivery error"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__sensor
+msgid "Sensor"
+msgstr "传感类"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_category__technical_type__serial
+msgid "Serial"
+msgstr "串口类"
+
+#. module: odoo_maintenance
 #: model_terms:ir.ui.view,arch_db:odoo_maintenance.qr_template
 msgid "Serial:"
 msgstr "序列号"
@@ -513,6 +671,16 @@ msgstr "下级目录"
 #: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment__equipment_state__alarm
 msgid "To Alarm"
 msgstr "报警"
+
+#. module: odoo_maintenance
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_flow_rate
+msgid "Traffic(m³/h)"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model_terms:ir.ui.view,arch_db:odoo_maintenance.maintenance_inherit_view_equipment_form_view
+msgid "Traffic(m³/h) :"
+msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_inspection__website_message_ids
@@ -554,6 +722,11 @@ msgid "三段加速度包络(g)"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_06
+msgid "三相电机"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__timestamp
 msgid "上传时间"
 msgstr ""
@@ -579,6 +752,11 @@ msgid "严重等级"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_12
+msgid "中间继电器"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_alert_rule__parameter_name__acceleration_envelope_2
 msgid "二段加速度包络"
 msgstr ""
@@ -591,6 +769,11 @@ msgstr ""
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_alert_rule__sequence
 msgid "优先级"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_04
+msgid "伺服电机"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -638,6 +821,11 @@ msgstr ""
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment_spec__health_score
 msgid "健康指数"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_08
+msgid "光电传感器"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -693,7 +881,6 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__pressure
-#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_pressure
 msgid "压力(kPa)"
 msgstr ""
 
@@ -710,6 +897,11 @@ msgstr ""
 #. module: odoo_maintenance
 #: model:ir.model.fields,help:odoo_maintenance.field_equipment_monitoring_data__signal_strength
 msgid "取值范围：-113（弱）到 -51（强）"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_02
+msgid "变频器"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -737,6 +929,11 @@ msgstr ""
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__firmware_version
 msgid "固件版本"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_13
+msgid "固态继电器"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -884,6 +1081,11 @@ msgid "无效二维码"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_11
+msgid "时间继电器"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__last_monitoring
 msgid "最后上传时间"
 msgstr ""
@@ -961,6 +1163,11 @@ msgid "正常"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_05
+msgid "步进电机"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.model.fields.selection,name:odoo_maintenance.selection__maintenance_equipment_spec__drive_type__pneumatic
 msgid "气动驱动"
 msgstr ""
@@ -992,7 +1199,6 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__flow_rate
-#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_flow_rate
 msgid "流量(m³/h)"
 msgstr ""
 
@@ -1003,7 +1209,6 @@ msgstr ""
 
 #. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_equipment_monitoring_data__liquid_level
-#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__latest_liquid_level
 msgid "液位(m)"
 msgstr ""
 
@@ -1021,6 +1226,11 @@ msgstr ""
 #. odoo-python
 #: code:addons/odoo_maintenance/models/maintenance_spec_inherit.py:0
 msgid "温度不能低于绝对零度"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_07
+msgid "温度传感器"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -1110,6 +1320,16 @@ msgid "电动驱动"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_14
+msgid "电容"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_15
+msgid "电感"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment_spec__motor_power
 msgid "电机功率(kW)"
 msgstr ""
@@ -1131,13 +1351,13 @@ msgid "电池电量应在0-100%之间"
 msgstr ""
 
 #. module: odoo_maintenance
-#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_alert_rule__parameter_name
-msgid "监控参数"
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_16
+msgid "电阻"
 msgstr ""
 
 #. module: odoo_maintenance
-#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment__monitoring_data_ids
-msgid "监控数据"
+#: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_alert_rule__parameter_name
+msgid "监控参数"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -1169,6 +1389,11 @@ msgstr ""
 #. module: odoo_maintenance
 #: model:ir.model.fields.selection,name:odoo_maintenance.selection__equipment_inspection__status__danger
 msgid "紧急停机"
+msgstr ""
+
+#. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_09
+msgid "编码器"
 msgstr ""
 
 #. module: odoo_maintenance
@@ -1383,6 +1608,22 @@ msgid "驱动参数"
 msgstr ""
 
 #. module: odoo_maintenance
+#: model:maintenance.equipment.category,name:odoo_maintenance.maintenance_equipment_category_03
+msgid "驱动器"
+msgstr ""
+
+#. module: odoo_maintenance
 #: model:ir.model.fields,field_description:odoo_maintenance.field_maintenance_equipment_spec__drive_type
 msgid "驱动类型"
 msgstr ""
+
+
+#. module: maintenance
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__maintenance_type__corrective
+msgid "Corrective"
+msgstr "纠正性维护"
+
+#. module: maintenance
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__maintenance_type__preventive
+msgid "Preventive"
+msgstr "预防性维护"
